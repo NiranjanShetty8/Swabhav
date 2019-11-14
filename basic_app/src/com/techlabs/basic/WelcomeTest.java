@@ -1,7 +1,8 @@
-package com.techlabs.banc;
+package com.techlabs.basic;
 
-public class WelcomeTestJava {
+public class WelcomeTest {
 	public static void main(String args[]) {
 		System.out.println("Hello World");
+		System.out.println();
 	}
 }
