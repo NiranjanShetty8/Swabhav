@@ -4,6 +4,7 @@ public class Rectangle {
 	private double height;
 	private double width;
 	
+	/*
 	public void small()
 	{
 		height = 2;
@@ -20,9 +21,45 @@ public class Rectangle {
 		System.out.println("Breadth of big rectangle " +width);
 		calculate();
 }
-	public void calculate()
+	*/
+	public void setHeight(double h)
+	{
+		
+		if(h<1) {
+			h=1;
+		}
+		if(h>100)
+		{
+			h =100;
+		}
+		height = h;
+	}
+	
+	public double getHeight()
+	{
+		return height;
+		
+	}
+	
+	public void setWidth(double w)
+	{
+		
+		if(w<1) {
+			w=1;
+		}
+		if(w>100)
+		{
+			w =100;
+		}
+		width = w;
+	}
+	public double getWidth()
+	{
+		return width;
+	}
+	public double calculate()
 	{
 		double area = height* width;
-		System.out.println("Area of the rectangle is " +area);
+		return area;
 	}
 }
