@@ -3,6 +3,8 @@ package com.techlab.Rectangle;
 public class Rectangle {
 	private double height;
 	private double width;
+	private final double LOWER_LIMIT = 1;
+	private final double UPPER_LIMIT = 100;
 	
 	/*
 	public void small()
@@ -25,10 +27,10 @@ public class Rectangle {
 	public void setHeight(double h)
 	{
 		
-		if(h<1) {
+		if(h<LOWER_LIMIT) {
 			h=1;
 		}
-		if(h>100)
+		if(h>UPPER_LIMIT)
 		{
 			h =100;
 		}
@@ -44,10 +46,10 @@ public class Rectangle {
 	public void setWidth(double w)
 	{
 		
-		if(w<1) {
+		if(w<LOWER_LIMIT) {
 			w=1;
 		}
-		if(w>100)
+		if(w>UPPER_LIMIT)
 		{
 			w =100;
 		}
