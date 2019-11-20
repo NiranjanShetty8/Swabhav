@@ -1,6 +1,6 @@
 package com.techlabs.basic;
 
-public class AllTest {
+public class Practice {
 	  static int reversDigits(int num) 
 	    { 
 	        int rev_num = 0; 

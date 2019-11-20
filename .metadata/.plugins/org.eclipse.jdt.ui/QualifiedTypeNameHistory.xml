@@ -3,4 +3,6 @@
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.techlabs.circle.test.PrintInfoTest"/>
+<fullyQualifiedTypeName name="com.techlabs.circle.Circle"/>
 </qualifiedTypeNameHistroy>
