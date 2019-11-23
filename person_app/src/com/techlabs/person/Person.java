@@ -7,12 +7,13 @@ public class Person {
 	private float height;
 	private float weight;
 
-	public Person(String newName, int newAge, String newGender, float newHeight, 
-			float newWeight) {
+	public Person(String newName, int newAge, String newGender, float newHeight, float newWeight) {
 		name = newName;
 		age = newAge;
 		gender = newGender;
 		height = newHeight;
+		if (height % (int) height > 0.11f)
+			height = (int) height + 1f;
 		weight = newWeight;
 
 	}

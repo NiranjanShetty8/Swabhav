@@ -5,4 +5,7 @@
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.techlabs.circle.test.PrintInfoTest"/>
 <fullyQualifiedTypeName name="com.techlabs.circle.Circle"/>
+<fullyQualifiedTypeName name="com.techlabs.practice.Enums"/>
+<fullyQualifiedTypeName name="com.techlabs.person.Person.GenderOptions"/>
+<fullyQualifiedTypeName name="com.techlabs.player.Player"/>
 </qualifiedTypeNameHistroy>

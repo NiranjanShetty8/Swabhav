@@ -2,8 +2,8 @@ package com.techlabs.circle;
 
 public class Circle {
 	private float radius;
-	final float UPPER_LIMIT = 10;
-	final float LOWER_LIMIT = 1;
+	private final float UPPER_LIMIT = 10;
+	private final float LOWER_LIMIT = 1;
 	private String color;
 
 //	public Circle(float newRadius) {
