@@ -14,7 +14,7 @@ public class CircleTest {
 		Circle big = new Circle();
 		big.setRadius(9.5f);
 		
-		System.out.println("Radius of small cirlce is :" +big.getRadius());
+		System.out.println("Radius of big cirlce is :" +big.getRadius());
 		big.setColor("BLuE");
 		System.out.println("Color is " + big.getColor());
 		System.out.println("Area is : " +big.calcArea());

@@ -15,7 +15,7 @@ public class Player {
 	}
 
 	public Player(int id, String name, int age) {
-		count++;
+		//count++;
 		this.id = id;
 		this.name = name;
 		this.age = age;
@@ -41,7 +41,7 @@ public class Player {
 		}
 	}
 	
-	public int getCount() {
+	public static int getCount() {
 		return count;
 	}
 

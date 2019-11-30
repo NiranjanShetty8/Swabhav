@@ -13,7 +13,7 @@ public class PlayerTest {
 		Player sachin = new Player(102, "Sachin", 20);
 		System.out.println(sachin.whoIsElder(niranjan).getName());
 		Player hello = new Player(102, "Sachin");
-		System.out.println(sachin.getCount());
+		System.out.println("count " +Player.getCount());
 		
 		TestReference raju = new TestReference(103,"Raju", 23);
 		System.out.println(raju.whoIsElder(sachin).getName());

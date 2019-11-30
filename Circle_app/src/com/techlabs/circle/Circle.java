@@ -44,10 +44,4 @@ public class Circle {
 		double area = radius * 3.142 * 3.142;
 		return area;
 	}
-
-//	public void printInfo() {
-//		System.out.println("Radius is : " + radius);
-//		System.out.println("Area is : " + calcArea());
-//	}
-
 }

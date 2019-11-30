@@ -17,11 +17,9 @@ public class TestArrays {
 		index[2] = 0;
 		index[3] = 2;
 
-		int ref;
 		while (y < 4) {
-			ref = index[y];
 			System.out.print("island is ");
-			System.out.println(islands[ref]);
+			System.out.println(islands[index[y]]);
 			y = y + 1;
 		}
 

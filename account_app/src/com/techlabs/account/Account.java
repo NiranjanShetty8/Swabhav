@@ -37,7 +37,7 @@ public class Account {
 		balance = balance + amount;
 	}
 
-	public boolean withdraw(double amount) {
+	public boolean withdraw(double amount){
 		if (balance - amount < MIN_BALANCE) {
 			result = false;
 		}
@@ -47,8 +47,9 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return super.toString() + "|" + " Account number is: " + this.getaccountNumber() + " Account name is: " 
-				+ this.getaccountName()+ " Balance is:  " + this.getBalance();
+		return super.toString() + "|" + " Account number is: " + this.getaccountNumber() + 
+				" Account name is: " + this.getaccountName()+ " Balance is:  " + 
+				this.getBalance();
 	}
 	
 	@Override 

@@ -6,6 +6,7 @@ public abstract class Account {
 	protected double balance;
 	protected final int LOWER_LIMIT = 1000;
 	protected final int LOAN_LIMIT = -10000;
+	protected static int noOfTransactions =0;
 
 	public Account(int accno, String name, double balance) {
 		this.accno = accno;
@@ -15,6 +16,8 @@ public abstract class Account {
 	
 	public void deposit(double amount) {
 		balance = balance + amount;
+		Account.noOfTransactions++;
+		
 	}
 	
 	public int getAccno() {
@@ -29,6 +32,10 @@ public abstract class Account {
 		return balance;
 	}
 	
-	public abstract void withdraw(double amount);
+	public static int getNoOfTransactions() {
+		return Account.noOfTransactions;
+	}
+	
+	public abstract void withdraw(double amount) throws InsufficientFunds  ;
 }
 

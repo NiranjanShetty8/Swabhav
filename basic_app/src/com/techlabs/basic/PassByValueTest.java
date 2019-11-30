@@ -1,11 +1,11 @@
 package com.techlabs.basic;
 
 public class PassByValueTest {
-
+	
 	public static void main(String[] args) {
-
 		int mark = 100;
-		editMarksToZero(mark);
+		PassByValueTest pt = new PassByValueTest();
+		pt.editMarksToZero(mark);
 		System.out.println(mark);
 
 		int[] grades = { 10, 20, 30, 40 };
@@ -19,7 +19,7 @@ public class PassByValueTest {
 		}
 	}
 
-	public static void editMarksToZero(int mark) {
+	public void editMarksToZero(int mark) {
 		mark = 0;
 		System.out.println("inside " +mark);
 	}
