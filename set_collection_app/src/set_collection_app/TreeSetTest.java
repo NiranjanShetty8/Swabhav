@@ -1,25 +1,32 @@
 package set_collection_app;
 
 import java.util.*;
-import java.util.Set;
 
-public class TreeSet {
+
+public class TreeSetTest {
 
 	public static void main(String[] args) {
-		Set<String> names = new java.util.TreeSet<String>();
+		TreeSetTest ts = new TreeSetTest();
+		Set<String> names = new TreeSet<String>();
+
 		names.add("Niranjan");
 		names.add("Pratik");
 		names.add("Jay");
 		names.add("Prakash");
-		for (String show : names) {
-			System.out.println(show);
-		}
+		ts.display(names);
 		names.remove("Niranjan");
 		System.out.println("After removing");
+		ts.display(names);
+		System.out.println("After duplicates");
+		names.add("Prakash");
+		names.add("Jaydeep");
+		ts.display(names);
+	}
+
+	public void display(Set<String> names) {
 		for (String show : names) {
 			System.out.println(show);
 		}
-
 	}
-
 }
+

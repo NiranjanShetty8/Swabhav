@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="com.techlabs.employee.poly.Accountant"/>
-<fullyQualifiedTypeName name="com.techlabs.employee.poly.EmpArray"/>
-<fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
-<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
-<fullyQualifiedTypeName name="com.techlabs.account.InsufficientFunds"/>
-<fullyQualifiedTypeName name="com.techlabs.basic.PassByValueTest"/>
-<fullyQualifiedTypeName name="com.techlabs.crudable.ICurdable"/>
-<fullyQualifiedTypeName name="com.techlabs.crudable.test.CrudableTest"/>
-<fullyQualifiedTypeName name="com.techlabs.crudable.CustomerDB"/>
-<fullyQualifiedTypeName name="com.techlabs.socializable.ISocializable"/>
-<fullyQualifiedTypeName name="com.techlabs.socializable.IEmotionable"/>
-<fullyQualifiedTypeName name="com.techlabs.socializable.Man"/>
-<fullyQualifiedTypeName name="com.techlabs.socializable.Boy"/>
-<fullyQualifiedTypeName name="com.techlabs.socializable.test.SocialTest"/>
 <fullyQualifiedTypeName name="com.techlabs.vehicles.test.VehicleTest"/>
 <fullyQualifiedTypeName name="com.techlabs.vehicles.Car"/>
 <fullyQualifiedTypeName name="com.techlabs.vehicles.IMovable"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -55,9 +39,25 @@
 <fullyQualifiedTypeName name="com.techlabs.engineering.Branch.branch"/>
 <fullyQualifiedTypeName name="com.techlabs.model.LineItem"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="set_collection_app.HashSetTest"/>
+<fullyQualifiedTypeName name="set_collection_app.LinkedHashMap"/>
 <fullyQualifiedTypeName name="set_collection_app.TreeSet"/>
+<fullyQualifiedTypeName name="set_collection_app.HashSetTest"/>
+<fullyQualifiedTypeName name="set_collection_app.LinkedHashSet"/>
+<fullyQualifiedTypeName name="set_collection_app.LinkedHashSetTest"/>
+<fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.TreeSet"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.sql.Wrapper"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.techlabs.model.Student"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="com.techlabs.model.SortByName"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="com.techlabs.model.SortByLocation"/>
 </qualifiedTypeNameHistroy>
