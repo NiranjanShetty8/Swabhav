@@ -1,27 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.techlabs.vehicles.test.VehicleTest"/>
-<fullyQualifiedTypeName name="com.techlabs.vehicles.Car"/>
-<fullyQualifiedTypeName name="com.techlabs.vehicles.IMovable"/>
-<fullyQualifiedTypeName name="java.io.FileWriter"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="com.techlabs.serialization.test.SerializeTest"/>
-<fullyQualifiedTypeName name="java.io.NotSerializableException"/>
-<fullyQualifiedTypeName name="java.io.Serializable"/>
-<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
-<fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
-<fullyQualifiedTypeName name="java.io.FileInputStream"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
-<fullyQualifiedTypeName name="com.techlabs.deserialization.test.DeserializeTest"/>
-<fullyQualifiedTypeName name="com.techlabs.serialize.Account"/>
-<fullyQualifiedTypeName name="java.lang.Throwable"/>
-<fullyQualifiedTypeName name="java.lang.ClassCastException"/>
-<fullyQualifiedTypeName name="java.lang.StackOverflowError"/>
-<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
-<fullyQualifiedTypeName name="com.techlabs.checked.exception.test.CheckedExceptionTest"/>
 <fullyQualifiedTypeName name="javax.security.auth.login.AccountException"/>
 <fullyQualifiedTypeName name="com.techlabs.account.exception.Account"/>
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
@@ -60,4 +38,26 @@
 <fullyQualifiedTypeName name="com.techlabs.model.SortByName"/>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
 <fullyQualifiedTypeName name="com.techlabs.model.SortByLocation"/>
+<fullyQualifiedTypeName name="contact_app.ICrudable"/>
+<fullyQualifiedTypeName name="contact_app.PhoneBook"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+<fullyQualifiedTypeName name="com.techlabs.contacts.PhoneBook"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.techlabs.annotations.RequiresRefactor.RequireRefactor"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
+<fullyQualifiedTypeName name="com.techlabs.annotations.test.FooTest"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Method"/>
+<fullyQualifiedTypeName name="com.techlabs.annotations.Foo"/>
+<fullyQualifiedTypeName name="com.techlabs.annotations.Annotable.RequireRefactor"/>
+<fullyQualifiedTypeName name="java.lang.annotation.Annotation"/>
+<fullyQualifiedTypeName name="java.lang.annotation.Target"/>
+<fullyQualifiedTypeName name="java.lang.annotation.ElementType"/>
+<fullyQualifiedTypeName name="java.lang.annotation.Retention"/>
+<fullyQualifiedTypeName name="java.lang.annotation.RetentionPolicy"/>
+<fullyQualifiedTypeName name="com.techlabs.annotations.RequireRefactor"/>
+<fullyQualifiedTypeName name="javax.management.modelmbean.RequiredModelMBean"/>
 </qualifiedTypeNameHistroy>
