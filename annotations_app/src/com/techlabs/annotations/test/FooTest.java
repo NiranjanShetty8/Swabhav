@@ -17,12 +17,11 @@ public class FooTest {
 		for (Method method : totalMethods) {
 			if (method.getAnnotation(RequireRefactor.class) != null) {
 				annoMethods[i] = method;
-//				System.out.println(method.getName());
 				i++;
 
 			}
 		}
-		System.out.println("Number of annoted methods :" + i);
+		System.out.println("Number of annoted methods: " + i);
 		for (Method met : annoMethods) {
 			if (met != null)
 				System.out.println(met.getName());
