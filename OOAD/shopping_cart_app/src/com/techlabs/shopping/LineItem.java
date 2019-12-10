@@ -30,4 +30,10 @@ public class LineItem {
 		return itemCost;
 	}
 	
+	@Override
+	public String toString() {
+		String itemDetails = "\nItem ID: " +this.getId() + "\nItem Quantity: " +this.getQuantity() 
+		+"\nItem cost: " +this.itemCost();
+		return itemDetails;
+	}
 }

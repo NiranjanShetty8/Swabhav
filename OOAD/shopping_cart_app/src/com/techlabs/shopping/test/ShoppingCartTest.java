@@ -1,10 +1,10 @@
 package com.techlabs.shopping.test;
 
+import java.io.*;
+
 import com.techlabs.shopping.*;
 
 public class ShoppingCartTest {
-	String customerName;
-
 
 	public static void main(String[] args) {
 		Customer niranjan = new Customer(100101, "Niranjan");
@@ -12,7 +12,7 @@ public class ShoppingCartTest {
 		Order order2 = new Order(8101, "11-11-2019");
 		niranjan.addOrder(order1);
 		niranjan.addOrder(order2);
-		
+
 		Product apple = new Product(101, "Apple", 100, 20);
 		Product banana = new Product(102, "Banana", 1000, 50);
 		LineItem lt1 = new LineItem(2101, 5, apple);
@@ -23,27 +23,42 @@ public class ShoppingCartTest {
 		order2.addItem(lt3);
 		ShoppingCartTest shopping = new ShoppingCartTest();
 		shopping.printInfo(niranjan);
-
+		try {
+			shopping.writeToFile(niranjan);
+		} catch (Exception e) {
+			e.getStackTrace();
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public void printInfo(Customer name) {
-		System.out.println("Your name: " +name.getName());
-		System.out.println("Your ID: " +name.getId());
-		System.out.println("Your Order Details are as follows: ");
-		for(Order order : name.getOrders()) {
-			System.out.println("Order ID : " +order.getId());
-			System.out.println("Order Date: " +order.getDate());
-			System.out.println("Checkout Price: " +order.checkOutPrice());
-			for(LineItem lineitems : order.getLineItemList()) {
-				System.out.println("Line Item ID is: " +lineitems.getId());
-				System.out.println("Quantity: " +lineitems.getQuantity());
-				System.out.println("Line Item Cost: " + lineitems.itemCost());
-				System.out.println("Product ID: " +lineitems.getProduct().getId());
-				System.out.println("Product Name: " +lineitems.getProduct().getName());	
-				System.out.println("Product Actual Cost: " +lineitems.getProduct().getCost());
-				System.out.println("Discount Percentage: " +lineitems.getProduct().getDiscount());
-				System.out.println("Product Final cost: " +lineitems.getProduct().calculateFinalPrice());
-				}
+		System.out.println(name.toString());
+		System.out.println("\nYour Order Details are as follows: ");
+		for (Order order : name.getOrders()) {
+			System.out.println(order.toString());
+			for (LineItem lineitems : order.getLineItemList()) {
+				System.out.println(lineitems.toString());
+				System.out.println(lineitems.getProduct().toString());
 			}
 		}
+	}
+
+	public void writeToFile(Customer name) throws Exception {
+		FileOutputStream fos;
+		fos = new FileOutputStream("D:\\Swabhav\\Swabhav\\OOAD\\shopping_cart_app\\" 
+				+ name.getId() +".txt");
+		DataOutputStream dos = new DataOutputStream(fos);
+		dos.writeChars(name.toString());
+		for (Order order : name.getOrders()) {
+			dos.writeChars(order.toString());
+			for (LineItem lineitems : order.getLineItemList()) {
+				dos.writeChars(lineitems.toString());
+				dos.writeChars(lineitems.getProduct().toString());
+
+			}
+		}
+		System.out.println("File written");
+		dos.close();
+	}
 }
+

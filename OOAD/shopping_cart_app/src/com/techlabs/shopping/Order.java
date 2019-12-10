@@ -45,4 +45,11 @@ public class Order {
 		}
 		return total;
 	}
+	
+	@Override
+	public String toString() {
+		String orderDetails = "\nOrder id: " +this.getId() + "\nOrder date: " +this.getDate()
+		+ "\nCheckout Price: " +this.checkOutPrice();
+		return orderDetails;
+	}
 }
