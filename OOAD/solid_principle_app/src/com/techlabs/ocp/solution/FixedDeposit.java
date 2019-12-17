@@ -5,10 +5,10 @@ public class FixedDeposit {
 	private String name;
 	private double principal;
 	private int duration;
-	private FestInterestRate festName;
+	private IFestivalRate festName;
 
 	public FixedDeposit(int accountNo, String name, double principal, int duration,
-			FestInterestRate festName) {
+			IFestivalRate festName) {
 		this.accountNo = accountNo;
 		this.name = name;
 		this.principal = principal;
@@ -32,7 +32,7 @@ public class FixedDeposit {
 		return duration;
 	}
 
-	public FestInterestRate getFestival() {
+	public IFestivalRate getFestival() {
 		return festName;
 	}
 

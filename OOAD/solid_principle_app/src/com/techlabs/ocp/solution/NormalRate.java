@@ -1,10 +1,10 @@
 package com.techlabs.ocp.solution;
 
-public class FestInterestRate {
-	protected double intRate;
+public class NormalRate implements IFestivalRate{
 
+	@Override
 	public double getRate() {
-		this.intRate = 0.07;
+		double intRate = 0.07;
 		return intRate;
 	}
 }

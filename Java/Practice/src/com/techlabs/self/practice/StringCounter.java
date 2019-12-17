@@ -1,21 +1,31 @@
 package com.techlabs.self.practice;
 
 public class StringCounter {
+	static int countG =0;
+	static int countR =0;
 
 	public static void main(String[] args) {
+		
 		char[] alphabets = { 'g', 'r', 'b', 'r', 'g', 'b', 'r' };
-		for (int i = 0,k=0, j = alphabets.length-1; i < alphabets.length
-				&& j>0 && k<alphabets.length; i++) {
+		for (int i = 0, countB = alphabets.length-1,countR=0; i < alphabets.length
+				&& countB>0 && countR<alphabets.length; i++) {
 			if (alphabets[i]=='r') {
-				alphabets[k] = 'r';
-				k++;
+				alphabets[countR] = 'r';
+				countR++;
 				continue;
 			} else if (alphabets[i]=='b') {
-				alphabets[j] = 'b';
-				j--;
+				alphabets[countB] = 'b';
+				countB--;
 				continue;
 			}
+				countG++;
+				StringCounter.countR = countR;
 		}
+		
+		for(int j =countR;j<=countR+countG;j++) {
+			alphabets[j] = 'g';
+		}
+		
 
 		for (char a : alphabets) {
 			System.out.println(a);

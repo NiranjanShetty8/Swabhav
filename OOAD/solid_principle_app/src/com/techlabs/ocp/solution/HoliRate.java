@@ -1,9 +1,9 @@
 package com.techlabs.ocp.solution;
 
-public class HoliRate extends FestInterestRate {
+public class HoliRate implements IFestivalRate {
 	@Override
 	public double getRate() {
-		this.intRate = 0.08;
+		double intRate = 0.08;
 		return intRate;
 	}
 

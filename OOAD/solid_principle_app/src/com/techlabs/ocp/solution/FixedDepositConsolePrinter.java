@@ -3,9 +3,9 @@ package com.techlabs.ocp.solution;
 public class FixedDepositConsolePrinter {
 
 	public static void main(String[] args) {
-		FestInterestRate normal = new FestInterestRate();
-		FestInterestRate diwali = new DiwaliRate();
-		FestInterestRate holi = new HoliRate();
+		IFestivalRate normal = new NormalRate();
+		IFestivalRate diwali = new DiwaliRate();
+		IFestivalRate holi = new HoliRate();
 		
 		FixedDeposit fd1 = new FixedDeposit(101, "Niranjan", 100000, 10, diwali);
 		printInfo(fd1);
