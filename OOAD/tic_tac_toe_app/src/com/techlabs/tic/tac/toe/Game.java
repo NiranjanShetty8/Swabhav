@@ -7,8 +7,10 @@ public class Game {
 	private ArrayList<Player> players = new ArrayList<Player>();
 	private Board board;
 	private ResultAnalyzer resultAn;
+	private int call =0;
 
 	public Game(ArrayList<Player> players, Board b, ResultAnalyzer resultAn) {
+	
 		this.players = players;
 		this.board = b;
 		this.resultAn = resultAn;
@@ -39,13 +41,27 @@ public class Game {
 		return resultAn;
 	}
 
+	public String nextPlayer() {
+		if(currentPlayer==players.get(0)) {
+			String name = players.get(1).getName();
+			return name;
+		}
+		String name = players.get(0).getName();
+		return name;
+	}
+	
 	public Result play(int index) {
+		call++;
 		setCurrentPlayer();
 		Mark mark = getCurrentPlayer().getMark();
 		board.putMarkInPosition(mark, index);
+		if(call>4) {
 		Result result = resultAn.giveResult(board, mark, index);
+		
 		return result;
-
+		}
+		Result result = Result.PROCESS;
+		return result;
 	}
 
 }

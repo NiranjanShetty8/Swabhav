@@ -10,6 +10,8 @@ public class Board {
 			cellList.add(new Cell());
 		}
 	}
+	
+	
 
 	public ArrayList<Cell> getCellList() {
 		return cellList;

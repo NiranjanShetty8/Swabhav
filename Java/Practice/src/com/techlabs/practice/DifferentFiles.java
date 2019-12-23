@@ -7,13 +7,14 @@ import java.util.Properties;
 public class DifferentFiles {
 	public static void main(String [] args) throws Exception {
 
-		String loc = "D:\\Swabhav\\Swabhav\\Practice\\File.properties";
-		Constructor<Properties> construct = Properties.class.getDeclaredConstructor();
+		String loc = "D:\\Swabhav\\Swabhav\\Java\\Practice\\File.properties";
+		Constructor<Properties> construct = 
+				Properties.class.getDeclaredConstructor();
 		Properties p1 = construct.newInstance();
 		OutputStream os = new FileOutputStream(loc);
-		p1.setProperty("Name", "Niranjan");
-		p1.setProperty("Location", "Kurla");
-		p1.setProperty("Mobile", "Poco");
+		p1.setProperty("Fact", "Niranjan");
+		p1.setProperty("Fact", "Kurla");
+		p1.setProperty("Fact", "Poco");
 		
 		p1.store(os, "Personal Details");
 		System.out.println("Done.");
@@ -22,6 +23,7 @@ public class DifferentFiles {
 		p1.load(is);
 		System.out.println(p1.getProperty("Name"));
 		p1.list(System.out);
+		
 		
 		
 }

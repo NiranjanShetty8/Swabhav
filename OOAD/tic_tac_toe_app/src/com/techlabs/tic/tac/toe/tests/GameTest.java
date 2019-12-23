@@ -1,14 +1,13 @@
-package com.techlabs.tic.tac.toe;
+package com.techlabs.tic.tac.toe.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
-
 import org.junit.jupiter.api.Test;
+import com.techlabs.tic.tac.toe.*;
 
 class GameTest {
-	Player player1 = new Player(Mark.X);
-	Player player2 = new Player(Mark.O);
+	Player player1 = new Player("p1",Mark.X);
+	Player player2 = new Player("p2",Mark.O);
 	ArrayList<Player> players = new ArrayList<Player>();
 	Board board1 = new Board(3);
 	ResultAnalyzer resultAn = new ResultAnalyzer(board1);

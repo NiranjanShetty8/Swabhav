@@ -1,7 +1,9 @@
-package com.techlabs.tic.tac.toe;
+package com.techlabs.tic.tac.toe.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+
+import com.techlabs.tic.tac.toe.*;
 
 class BoardTest {
 
