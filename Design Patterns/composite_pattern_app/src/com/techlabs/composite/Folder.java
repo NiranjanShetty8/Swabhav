@@ -27,14 +27,15 @@ public class Folder implements IStorable {
 	@Override
 	public void display(String s) {
 		System.out.println(s+ this.getName());
+		s += "--";
 		for (IStorable obj : children) {
 			if (obj instanceof File) {
-				obj.display("--");
+				obj.display(s);
 			}
 		}
 		for (IStorable obj : children) {
 			if (obj instanceof Folder) {
-				obj.display("--");
+				obj.display(s);
 			}
 		}
 	}

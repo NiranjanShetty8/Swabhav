@@ -29,7 +29,7 @@ public class FolderTest {
 		f1.addChild(f13);
 		
 		
-		f1.display("--");
+		f1.display("");
 		
 	}
 	

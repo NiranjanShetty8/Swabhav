@@ -14,6 +14,7 @@ public class Game {
 		this.players = players;
 		this.board = b;
 		this.resultAn = resultAn;
+		this.currentPlayer = players.get(0);
 
 	}
 
@@ -51,8 +52,11 @@ public class Game {
 	}
 	
 	public Result play(int index) {
-		call++;
+		
+		if(call>0) {
 		setCurrentPlayer();
+		}
+		call++;
 		Mark mark = getCurrentPlayer().getMark();
 		board.putMarkInPosition(mark, index);
 		if(call>4) {
