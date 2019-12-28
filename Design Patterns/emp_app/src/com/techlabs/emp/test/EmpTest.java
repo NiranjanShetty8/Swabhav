@@ -16,9 +16,9 @@ public class EmpTest {
 			System.out.println(ob.getCeo().getEmpName());
 			for(IEmployee e : ob.getCeo().getReportees()) {
 				System.out.println(s +e.getEmpName());
-				for(IEmployee emp : e.getReportees()) {
-					System.out.println(s + "--" +emp.getEmpName());
-				}
+//				for(IEmployee emp : e.getReportees()) {
+//					System.out.println(s + "--" +emp.getEmpName());
+//				}
 			}
 		} catch (Exception e1) {
 			e1.printStackTrace();

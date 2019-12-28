@@ -66,5 +66,11 @@ public class EmpAnalyzer {
 		}
 		return deptEmpCount;
 	}
+	
 }
-
+//public Employee getManager(Employee emp) {
+//for(Employee e: empList) {
+//	Integer.
+//	if(emp.get)
+//}
+//}
