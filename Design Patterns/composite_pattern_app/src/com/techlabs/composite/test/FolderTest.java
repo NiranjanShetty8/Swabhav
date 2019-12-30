@@ -31,6 +31,8 @@ public class FolderTest {
 		
 		f1.display("");
 		
+		System.out.println(f1.parseToXml());
+		
 	}
 	
 }

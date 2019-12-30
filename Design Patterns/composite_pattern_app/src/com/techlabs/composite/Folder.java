@@ -20,13 +20,14 @@ public class Folder implements IStorable {
 	}
 
 	public void addChild(IStorable obj) {
-		
+
 		this.children.add(obj);
 	}
 
 	@Override
 	public void display(String s) {
-		System.out.println(s+ this.getName());
+
+		System.out.println(s + this.getName());
 		s += "--";
 		for (IStorable obj : children) {
 			if (obj instanceof File) {
@@ -38,6 +39,18 @@ public class Folder implements IStorable {
 				obj.display(s);
 			}
 		}
+	}
+
+	public StringBuilder parseToXml() {
+		StringBuilder str = new StringBuilder();
+		str.append("<" + this.getName() + ">" +"\n");
+		if (children.size() != 0) {
+			for (IStorable obj : children) {
+				str.append(obj.parseToXml());
+			}
+		}
+		str.append("</" +this.getName() +">" +"\n");
+		return str;
 	}
 
 }

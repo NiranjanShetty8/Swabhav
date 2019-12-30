@@ -23,7 +23,7 @@ public class EmpAnalyzer {
 		return obj;
 	}
 	
-	public Employee getMaxSalary() throws Exception {
+	public IEmployee getMaxSalary() throws Exception {
 		
 		int largest =0;
 		int indexOfLargest = 0;
@@ -40,7 +40,7 @@ public class EmpAnalyzer {
 		int count = 1;
 		HashMap<String , Integer> deptEmpCount = new 
 				HashMap<String, Integer>();
-		for(Employee e : empList) {
+		for(IEmployee e : empList) {
 			if(deptEmpCount.containsKey(e.getEmpDesignation())) {
 				deptEmpCount.put(e.getEmpDesignation(), 
 						deptEmpCount.get(e.getEmpDesignation())+1);
@@ -55,7 +55,7 @@ public class EmpAnalyzer {
 		int count =1;
 		HashMap<Integer , Integer> deptEmpCount = new 
 				HashMap<Integer, Integer>();
-		for(Employee e : empList) {
+		for(IEmployee e : empList) {
 			if(deptEmpCount.containsKey(e.getEmpDeptNumber())) {
 				deptEmpCount.put(e.getEmpDeptNumber(), 
 						deptEmpCount.get(e.getEmpDeptNumber())+1);

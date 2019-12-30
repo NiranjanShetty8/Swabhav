@@ -30,6 +30,14 @@ public class File implements IStorable{
 	this.getSize());
 //		System.out.printf("%s %s : %.2f\n",getName(),getSize(),getExtension());
 	}
+
+	@Override
+	public StringBuilder parseToXml() {
+		StringBuilder str = new StringBuilder();
+		str.append("<" + this.getName() + ">" +"\n");
+		str.append("</" +this.getName() +">" +"\n");
+		return str;
+	}
 	
 	
 

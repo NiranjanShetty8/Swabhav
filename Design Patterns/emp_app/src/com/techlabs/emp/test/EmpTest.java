@@ -7,25 +7,20 @@ import com.techlabs.emp.*;
 public class EmpTest {
 
 	public static void main(String[] args) {
-		String s = "--";
 		EmpParser parse = new EmpParser(new EmpFileReader());
 		EmpAnalyzer empal = new EmpAnalyzer(parse);
 		OrganisationBuilder ob = new OrganisationBuilder(empal.getEmpList());
 		try {
 			ob.build();
-			System.out.println(ob.getCeo().getEmpName());
-			for(IEmployee e : ob.getCeo().getReportees()) {
-				System.out.println(s +e.getEmpName());
-//				for(IEmployee emp : e.getReportees()) {
-//					System.out.println(s + "--" +emp.getEmpName());
-//				}
-			}
+			Employee ceo = ob.getCeo();
+			System.out.print(ceo.parseToXml());
+			System.out.println();
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
 		
 		try {
-			Employee e = empal.getMaxSalary();
+			IEmployee e = empal.getMaxSalary();
 			System.out.println("Highest paid employee is: " +e.getEmpName() +" with salary: "
 		+ e.getEmpSalary() + " " +e.getEmpDateOfJoining());
 		} catch (Exception e) {
