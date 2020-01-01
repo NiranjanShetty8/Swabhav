@@ -11,11 +11,13 @@
 <body>
     <div id="banner">Empty Banner</div>
     <script>
-        throw new exception;
-        var myHtml = document.getElementById("banner");
-        myHtml.innerHTML =
-            "Welcome to JavaScript Page <style>"
-        "*{background-color: chartreuse; font-size: x-large; }</style>";
+        debugger
+        var banner = document.getElementById("banner");
+        var ban = document.querySelector("#banner");
+        banner.innerHTML =
+            "Welcome to JavaScript Page <style>*\
+                {font-size: x-large; }</style>";
+        ban.style.backgroundColor = "green";
 
     </script>
 </body>

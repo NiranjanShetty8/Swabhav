@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" id="fullHtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Colors</title>
+</head>
+
+<body>
+    <button id="reddish" type="button">RED</button>
+    <button id="bluish" type="button">BLUE</button>
+    <button onclick="alert('Hello')" type="menu">MENU</button>
+
+    <script>
+
+        function listener(event) {
+            console.log(event);
+            document.body.style.backgroundColor = event.target.innerHTML
+
+        }
+        var redButton = document.getElementById("reddish");
+        redButton.addEventListener("click", listener);
+
+        var blueButton = document.getElementById("bluish").addEventListener("click",
+            listener);
+    </script>
+</body>
+
+</html>
