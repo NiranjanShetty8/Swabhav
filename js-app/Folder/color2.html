@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color</title>
+</head>
+
+<body>
+    <select id="list" onchange="getSelectedValue()">
+        <option value="white">----SELECT----</option>
+        <option selected value="#FFCCCB">Red</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+    </select>
+    <script>
+        getSelectedValue();
+        function getSelectedValue() {
+            var selectedValue = document.getElementById("list").value;
+            console.log(selectedValue);
+            document.body.style.backgroundColor = selectedValue;
+
+        }
+    </script>
+</body>
+
+</html>

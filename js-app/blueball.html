@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blue-Ball Game</title>
+    <link href="blueBallStyle.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="firstPage" class="first">
+        <h1>Objective :</h1>
+        &nbsp &nbsp There is one blue ball in the list of the given balls.
+        Your goal is to find out which ball is the blue ball.
+        <h2>Mechanics of the game :</h2>
+        <div id="rules">
+            <ul id="rulesList">
+                <li>Pick a ball from the given list of balls</li>
+                <li>If the Selected ball turns Red it means the blue ball is not before the selected ball. </li>
+                <li>If the selected ball turns Green it means the blue ball is not after the selected ball.</li>
+            </ul>
+            <button id="startButton" type="button">Start game</button>
+        </div>
+    </div>
+
+    <div class="second" id="secondPage"></div>
+    <div id="endGame"></div>
+    <script src="blueballScript.js"></script>
+</body>
+
+</html>

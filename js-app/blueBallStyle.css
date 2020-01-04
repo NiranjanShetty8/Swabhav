@@ -1,0 +1,72 @@
+.button {
+    height: 98px;
+    width: 98px;
+    border: grey;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: ruby-base-container;
+    font-size: 30px;
+    margin: 4px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+.button:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    background-color:grey;
+}
+
+#guessHeader{
+    font-size: xx-large;
+    color: springgreen;
+    font-family: cursive;
+    margin-left: 450px;
+}
+
+.second{
+    background-color: black;
+}
+
+#restartButton{
+    height: 100px;
+    width: 100px;
+    border-radius: 30%;
+    margin-left: 550px;
+    margin-top: 50px;
+    border: silver;
+    cursor: pointer;
+    font-size: xx-large;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    color: silver;
+    border: 2px solid;
+}
+
+#restartButton:hover{
+    background-color: steelblue ;
+}
+
+.resultClass{
+    font-size: xx-large;
+    height: 250px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 350px;
+    color: teal;
+    margin-top: 50px;
+    margin-left: 400px;
+    list-style-position: inherit;
+    display: inline-block;
+}
+
+#attemptId{
+    margin-left: 400px;
+    margin-top: -50px;
+    font-size: xx-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    color: crimson;
+}

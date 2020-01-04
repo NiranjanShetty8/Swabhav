@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color</title>
+</head>
+
+<body>
+    <select id="list">
+        <option value="white">----SELECT----</option>
+        <option selected value="red">Red</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+    </select>
+    <script>
+        getSelectedText();
+        list.addEventListener("change", getSelectedText)
+        function getSelectedText(e) {
+            console.log(e);
+            var colour = document.getElementById("list").value;
+            console.log(colour);
+            document.body.style.backgroundColor = colour;
+        }
+    </script>
+</body>
+
+</html>
