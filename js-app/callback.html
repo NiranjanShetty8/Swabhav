@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Call Back</title>
+</head>
+
+<body>
+    <script>
+        function doProcessing(fn) {
+            console.log("Doing Processing");
+            var n = Math.floor(Math.random() * 10);
+            fn(n);
+        }
+        doProcessing(function (r) {
+            console.log("result is " + r);
+
+        });
+
+
+        doProcessing(displayAfterProcessing);
+
+        function displayAfterProcessing(d) {
+            console.log("display after " + d);
+        }
+
+        setTimeout(displayMyName, 2000);
+
+        function displayMyName() {
+            console.log("My name is Niranjan");
+        }
+
+        setTimeout(function () {
+            console.log("My name is stil Niranjan")
+        }, 3000);
+
+        var timer = setInterval(() => {
+            alert("Are you there?")
+        }, 5000);
+
+        setTimeout(() => {
+            clearInterval(timer)
+        }, 30000);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Collection</title>
+</head>
+
+<body>
+    <div id="collect"></div>
+    <script>
+        var students = [{ name: "Niranjan", rollNo: 30, standard: "10th" },
+        { name: "Jay", rollNo: 20, standard: "10th" },
+        { name: "Prakash", rollNo: 10, standard: "10th" }];
+        var studentsString = JSON.stringify(students);
+        if (typeof (Storage) !== "undefined") {
+            localStorage.setItem("studentRecords", studentsString);
+            document.getElementById("collect").innerHTML = localStorage.getItem("studentRecords");
+        } else {
+            document.getElementById("collect").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+    </script>
+
+</body>
+
+</html>

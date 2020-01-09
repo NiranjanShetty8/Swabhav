@@ -1,9 +1,11 @@
+"use strict";
 var button = document.getElementById("startButton");
 var firstPage = document.getElementById("firstPage");
 var secondPage = document.getElementById("secondPage");
-var randomNo = Math.floor(Math.random() * 50) + 1;
+var randomNo;
+
 var attempts;
-console.log(randomNo);
+
 
 button.addEventListener("click", startGame)
 
@@ -18,11 +20,13 @@ function restartGame() {
 }
 
 function startGame() {
-    attempts = 7;
+    attempts = 6;
+    randomNo = Math.floor(Math.random() * 50) + 1;
+    console.log(randomNo);
     hidePage();
     secondPage.innerHTML = "<head><title>BlueBall Game</title></head><h1 id='guessHeader'>Make your guess </h1> <br> \
     <div id='attemptId'>Attempts Remaining: "+ attempts + "</div>";
-    for (noOfButtons = 1; noOfButtons <= 50; noOfButtons++) {
+    for (var noOfButtons = 1; noOfButtons <= 50; noOfButtons++) {
         var tempString = "playingGame('" + noOfButtons + "')"
         secondPage.innerHTML += "<button class = 'button' id ='" + noOfButtons +
             "' type = 'button' onclick = " + tempString + " >" + noOfButtons + "</button>";
@@ -65,10 +69,12 @@ function endGame(result) {
 
     if (result) {
 
-        endGame.innerHTML = "<h1 id='resultId' class = 'resultClass'>Congratulations you won.</h1>"
+        endGame.innerHTML = "<h1 id='resultId' class = 'resultClass'>Congratulations you won.\
+        <br>Click on 'Start Over' to play again.</h1>"
     } else {
-        endGame.innerHTML = "<span id='resultId' class = 'resultClass'>Sorry,<br> all your attempts are over.<br>Try again</span>"
+        endGame.innerHTML = "<span id='resultId' class = 'resultClass'>Sorry,<br> All your attempts are over.<br>\
+        Ball number "+ randomNo + " was the blue ball.<br>Click on 'Start Over' to play again.</span>"
     }
     secondPage.innerHTML = '<style> *{background-color: black;}</style>';
-    secondPage.innerHTML += "<Button onclick ='restartGame()' id='restartButton' type = 'button'>Start over</button>"
+    secondPage.innerHTML += "<Button onclick ='restartGame()' id='restartButton' type = 'button'>Start Over</button>"
 }

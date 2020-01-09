@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <style>
+        .warn {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>User Details</h2>
+    <form id="form1" action="auth.php" method="POST">
+        Username<br>
+        <input type="text" name="firstName" placeholder="Enter your name"><span class="warn" id="reqName"></span>
+        <br>
+        Password <br>
+        <input type="password" name="password" placeholder="Enter password"><span class="warn" id="reqPassword"></span>
+        <br>
+        <input type="submit" value="Submit">
+
+    </form>
+    <script>
+        document.getElementById("form1").onsubmit = isValidform;
+        console.log(document.getElementById("form1").onsubmit);
+
+
+        function isValidform() {
+            if (document.forms["form1"]["firstName"].value == "") {
+                document.getElementById("reqName").innerHTML = "*Required Field";
+                if (document.forms["form1"]["password"].value == "") {
+                    document.getElementById("reqPassword").innerHTML = "*Required Field";
+                }
+                return false;
+
+            }
+            if (document.forms["form1"]["password"].value == "") {
+                document.getElementById("reqPassword").innerHTML = "*Required Field";
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>
