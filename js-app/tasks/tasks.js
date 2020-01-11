@@ -1,26 +1,34 @@
 (function () {
-    use = "strict";
+    "use strict";
     var button = document.getElementById("addButton");
     button.addEventListener("click", newTask);
     var ul = document.getElementById("incompleteList");
     var ulComplete = document.getElementById("completeList");
+    // var enterPress = document.getElement;
     var item = document.getElementById("taskText").value;
     var taskList = [];
+
+    window.addEventListener("keypress", checkPress, false);
+    function checkPress(event) {
+        {
+            if (event.keyCode == "13") {
+                newTask();
+            }
+        }
+    }
 
 
     function newTask() {
 
         item = document.getElementById("taskText").value;
-
         var noText = document.getElementById("noText");
-        if (item === "") {
-
+        console.log(item);
+        if (item == "") {
             noText.innerHTML = "*Enter some Task"
+            document.getElementById("taskText").value = "";
             return;
         }
         noText.innerHTML = "";
-
-
         addToList();
     }
 
@@ -34,25 +42,31 @@
         } else {
             creation = time;
         }
-        if (!done) {
+        if (done == undefined) {
             done = false;
         }
+
         var task = { id: creation, task: text, timeStamp: creation, done: done };
         taskList.push(task);
         var li = document.createElement("li");
         var checkbox = document.createElement("input");
         checkbox.type = "checkbox";
+        if (task.done == true) {
+            checkbox.checked = true;
+        }
         li.appendChild(checkbox);
         li.appendChild(document.createTextNode(text));
         li.appendChild(document.createTextNode("--- Created on " + creation));
-        setToLocal();
+
 
         if (task.done) {
+            li.style.textDecoration = 'line-through';
             ulComplete.appendChild(li);
         } else {
             ul.appendChild(li);
         }
-        ul.append(li);
+        setToLocal();
+
         document.getElementById("taskText").value = "";
 
         checkbox.addEventListener("change", function (e) {
@@ -70,7 +84,6 @@
                 li.style.textDecoration = 'none';
                 unDoneTask(li);
             }
-
         });
     }
 
@@ -81,7 +94,6 @@
 
     function unDoneTask(li) {
         ul.appendChild(li);
-
     }
 
     function setToLocal() {
@@ -89,82 +101,17 @@
         localStorage.setItem("taskList", stringTaskList);
     }
 
-    function loadToList(text, time, done) {
-        var task = { id: time, task: text, timeStamp: time, done: done };
-        taskList.push(task);
-        console.log(task.task + " is " + task.done);
-        var li = document.createElement("li");
-        var checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        if (task.done == true) {
-            console.log("ehhh");
-            checkbox.checked = true;
-        }
-        li.appendChild(checkbox);
-        li.appendChild(document.createTextNode(text));
-        li.appendChild(document.createTextNode("--- Created on " + time));
-
-
-        if (task.done) {
-            console.log("inside");
-            console.log(li);
-            console.log(ulComplete);
-            ulComplete.appendChild(li);
-        } else {
-            console.log("here");
-            ul.appendChild(li);
-        }
-
-        checkbox.addEventListener("change", function (e) {
-
-            if (e.target.checked) {
-                task.done = true;
-                li.style.textDecoration = 'line-through';
-                doneTask(li);
-                ulComplete.appendChild(li);
-                setToLocal();
-
-
-            } else {
-                task.done = false;
-
-                li.style.textDecoration = 'none';
-                unDoneTask(li);
-                setToLocal();
-            }
-
-        });
-
-    }
-
     (function () {
 
         var test = localStorage.getItem("taskList");
         var loadedTask = JSON.parse(test);
-        for (var tasks of loadedTask) {
-            var loadText = tasks.task;
-            var loadTime = tasks.timeStamp;
-            var loadFlag = tasks.done;
-            loadToList(loadText, loadTime, loadFlag);
+        if (loadedTask != null) {
+            for (var tasks of loadedTask) {
+                var loadText = tasks.task;
+                var loadTime = tasks.timeStamp;
+                var loadFlag = tasks.done;
+                addToList(loadText, loadTime, loadFlag);
+            }
         }
-
     }());
-
-
 })();
-
-// function GetFormattedDate() {
-//     var todayTime = new Date();
-//     var month = todayTime.getMonth() + 1;
-//     var day = todayTime.getDate();
-//     var year = todayTime.getFullYear();
-//     var time = todayTime.getTime();
-//     return month + "/" + day + "/" + year + " at " + time;
-// }        // for (var iter = 0; iter < indexC; iter++) {
-        //     var loadCompTask = localStorage.getItem("tasksC" + iter + "");
-        //     // console.log(loadCompTask);
-        //     var loadCompTime = localStorage.getItem("timeC" + iter);
-        //     var checkbox = document.createElement("input");
-        //     checkbox.type = "checkbox";
-        //     checkbox.select;
-// }
