@@ -6,15 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Question Bank</title>
+    <link href="questionbank.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
-    <h1 id="questionNo"></h1>
-    <div id="questionDetails"> </div>
-    <div id="buttonArea"><button id="previousButton" type="button">Prev</button><button id="button"
-            type="button">Next</button><button id="finishButton" type="button">Finish</button</div> <script
-                src="questionbank.js">
-                </script>
+    <div class="bg">
+        <h1 id="quizTime">QUIZ TIME!!</h1>
+        <h2 id="questionNo"></h2>
+        <form name="form">
+            <div id="questionDetails"> </div>
+        </form>
+
+        <div id="buttonArea"><button id="previousButton" type="button">Prev</button><button id="button"
+                type="button">Next</button><button id="finishButton" type="button">Finish</button></div>
+        <script src="questionbank.js"> </script>
+
+
+    </div>
 
 </body>
 

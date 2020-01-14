@@ -8,7 +8,7 @@ public class EmpArray {
 
 	public void getDetails(Employee[] e) throws IOException {
 		for (int index = 0; index < e.length; index++) {
-			FileWriter fw = new FileWriter("D:\\Swabhav\\Swabhav\\Practice\\" + 
+			FileWriter fw = new FileWriter("D:\\Swabhav\\Swabhav\\Java\\Practice\\" + 
 				e[index].getENumber() + ".txt");
 			PrintWriter pw = new PrintWriter(fw);
 			pw.print("Name: " + e[index].getEName() + " " +

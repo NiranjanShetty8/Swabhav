@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Banner</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src=""></script>
+</head>
+
+<body>
+    <div id="banner"
+        style="display: inline;background:#bf9521;height:250px;width:300px;position: relative;font-size: 50px;">
+
+        Welcome to J-Query</div>
+    <script>
+        $(document).ready(function () {
+            $('#banner').animate({
+                left: '400px',
+                top: '75px',
+                opacity: '1.0',
+                height: '350px',
+                width: '400px',
+                fontSize: '3em',
+                color: '#0900ff',
+
+            });
+        });
+        $(document).ready(function () {
+            $(this).css("color", "red");
+        })
+
+    </script>
+</body>
+
+</html>
