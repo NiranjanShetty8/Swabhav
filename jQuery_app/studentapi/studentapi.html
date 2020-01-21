@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>StudentAPI</title>
+    <link href="studentapi.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="addForm">
+
+        <form name="add">
+            Roll No : &nbsp; <input type="number" name="rollNo"><br>
+            Name : &nbsp; <input type="text" name="name"><br>
+            Age : &nbsp; <input type="number" name="age"><br>
+            E-mail ID : &nbsp; <input type="text" name="email"><br>
+            Date : &nbsp; <input type="date" name="date"><br>
+            Gender : &nbsp; <input type="radio" name="isMale" value="true">Male
+            <input type="radio" name="isMale" value="false">Female <br>
+
+            <input type="reset" id="addButton" value="Add" onclick="studentService.addStudent()">
+
+            <div id="addForm">
+        </form>
+    </div>
+    <div id="operationResult"></div>
+    <div><button type="button" id="toggleForm">&#9943;</button></div>
+    <div id="count"></div>
+    <br>
+    <div id="display">
+        <table id="displayTable">
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email-ID</th>
+                <th>Date</th>
+                <th>isMale</th>
+                <th>ID</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="../jquery-3.4.1.js"></script>
+    <script src="studentapi.js"></script>
+</body>
+
+</html>

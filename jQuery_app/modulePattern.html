@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Module Pattern</title>
+    <script src="jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <script>
+        var mathService = function () {
+            var service = {};
+            console.log("Created Math Service");
+            var _common;
+            service.cubeEven = function (number) {
+                if (number % 2 != 0) {
+                    throw "Specify an even number"
+                }
+                return number * number * number;
+            }
+            service.isEven = function (number) {
+                if (number % 2 == 0) {
+                    return true;
+                }
+                // _common = number;
+                return false;
+            }
+            return service;
+
+        }();
+
+        console.log(mathService.cubeEven('4'));
+        console.log(mathService.isEven('3'));
+        console.log(mathService.cubeEven('6'));
+        console.log(mathService);
+
+    </script>
+</body>
+
+</html>

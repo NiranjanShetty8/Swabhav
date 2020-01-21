@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Numbers</title>
+    <script src="jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <div class="fullClass"> <span id="label">NO</span> &nbsp;
+        <span> <textarea id="textArea" placeholder="Enter a number"></textarea> </span>
+        <span></span><button id="button">Facts</button> </span></div>
+    <div id="warning"></div>
+    <div id="facts"></div>
+    <div id="test" style="position: absolute; top: 0; left:0 ;width: 100%;background-color: chartreuse;">Hello</div>
+    <script>
+        (function () {
+            $('document').ready(function () {
+                $('#button').on('click', getFacts);
+            });
+
+            function getFacts() {
+                var number = $("#textArea").val();
+                $('#test').toggle();
+                return;
+
+                $.ajax({
+                    type: "GET",
+                    url: "http://numbersapi.com/" + number,
+                    success: function (data) {
+                        $('#facts').html(data)
+
+                    }
+
+                })
+            }
+        })();
+
+    </script>
+
+</body>
+
+</html>

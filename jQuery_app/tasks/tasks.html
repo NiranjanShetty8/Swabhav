@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tasks</title>
+    <link href="tasks.css" type="text/css" rel="stylesheet">
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <h1>Task</h1>
+    <div class="textClass" id="firstLine"> <input type="text" id="taskText" placeholder="Enter the Task"></input>
+        <button id="addButton" type="button">+</button>
+    </div>
+
+    <div id="noText"></div>
+
+    <div class="incomClass" id="incomplete"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <strong><u>INCOMPLETE TASKS</u>
+        </strong>
+        <ul class="incomClass" id="incompleteList"></ul>
+    </div>
+    <div class="comClass" id="complete"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<strong> <u>COMPLETED TASKS</u>
+        </strong>
+        <ul class="comClass" id="completeList"></ul>
+    </div>
+
+
+    <script src="tasksService.js"></script>
+    <script src="tasksview.js"></script>
+
+</body>
+
+</html>

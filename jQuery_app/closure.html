@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Module Pattern</title>
+    <script src="jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <script>
+        function makeStudent() {
+            var obj = {};
+            var _firstName;
+            var _lastName;
+
+            obj.setFirstName = function (fname) {
+                if (fname.length < 5) {
+                    throw "First name should be longer than 5 characters";
+                }
+                _firstName = fname;
+            }
+
+            obj.setLastName = function (lname) {
+                _lastName = lname;
+            }
+
+            obj.getFullName = function () {
+                return _firstName + " " + _lastName;
+            }
+
+            return obj;
+        }
+
+        var s1 = makeStudent();
+        s1.setFirstName('Virendar');
+        // s1.setFirstName('viru');
+        s1.setLastName('Sehwag');
+        console.log(s1.getFullName());
+        console.log(s1);
+
+    </script>
+</body>
+
+</html>
