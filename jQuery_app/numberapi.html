@@ -15,7 +15,6 @@
         <span></span><button id="button">Facts</button> </span></div>
     <div id="warning"></div>
     <div id="facts"></div>
-    <div id="test" style="position: absolute; top: 0; left:0 ;width: 100%;background-color: chartreuse;">Hello</div>
     <script>
         (function () {
             $('document').ready(function () {
@@ -24,8 +23,6 @@
 
             function getFacts() {
                 var number = $("#textArea").val();
-                $('#test').toggle();
-                return;
 
                 $.ajax({
                     type: "GET",

@@ -16,3 +16,10 @@ table, th, td {
     
 
   }
+
+  .entriesClass:hover{
+   background-color: skyblue;
+   cursor: pointer;
+   /* -webkit-animation: scale(1.01);
+   transform: scale(1.01); */
+  }

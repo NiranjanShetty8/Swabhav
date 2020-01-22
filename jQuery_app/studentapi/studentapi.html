@@ -19,15 +19,16 @@
             Age : &nbsp; <input type="number" name="age"><br>
             E-mail ID : &nbsp; <input type="text" name="email"><br>
             Date : &nbsp; <input type="date" name="date"><br>
-            Gender : &nbsp; <input type="radio" name="isMale" value="true">Male
-            <input type="radio" name="isMale" value="false">Female <br>
+            Gender : &nbsp; <input id="male" type="radio" name="isMale" value="true">Male
+            <input id="female" type="radio" name="isMale" value="false">Female <br>
 
             <input type="reset" id="addButton" value="Add" onclick="studentService.addStudent()">
+            <input type="reset" id="updateButton" value="Update" onclick="studentService.updateStudent()">
 
             <div id="addForm">
         </form>
     </div>
-    <div id="operationResult"></div>
+    <div class="message" id="operationResult"></div>
     <div><button type="button" id="toggleForm">&#9943;</button></div>
     <div id="count"></div>
     <br>
@@ -41,8 +42,10 @@
                 <th>Date</th>
                 <th>isMale</th>
                 <th>ID</th>
+                <th>Click to Delete Student</th>
             </tr>
         </table>
+        <div class="message" id="deleteOperationResult"></div>
     </div>
 
     <script src="../jquery-3.4.1.js"></script>
