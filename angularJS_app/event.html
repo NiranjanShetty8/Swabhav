@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event</title>
+    <script src="angular.js"></script>
+</head>
+
+<body>
+    <div ng-app="moduleA" ng-controller="controllerA">
+        <button type="button" ng-click="myFunction()">Click
+            me</button><br>{{student.id}}<br>{{student.name}}<br>{{student.cgpa}}<br>
+        <img ng-src="{{student.img}}"></div>
+    <script>
+        /// reference path= "D:/Swabhav/Swabhav/angularJS_app/typings/modules/angular/index.d.ts" />
+
+        angular.module("moduleA", [])
+            .controller('controllerA', function ($scope) {
+                $scope.myFunction = function () {
+                    $scope.student = { id: "101", name: "Prakash", cgpa: "7.8", img: "student.jpeg" }
+                }
+            })
+        // angular.module('moduleA', [])
+        //     .controller('controllerA', function ($rootScope, $scope) {
+        //         console.log("inside controller A");
+        //         console.log($rootScope.companyName);
+        //         $scope.message = "Controller A says Hello";
+        //     })
+    </script>
+</body>
+
+</html>

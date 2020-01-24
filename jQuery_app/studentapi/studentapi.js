@@ -19,11 +19,6 @@ var studentService = (function () {
 
 
         service.getStudents();
-        // document.querySelectorAll('.entriesClass td').forEach(e => e.addEventListener("click", function () {
-        //     console.log("clicked")
-        // }));
-
-
     })
 
     service.addStudent = function () {
@@ -45,11 +40,8 @@ var studentService = (function () {
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 $('#operationResult').html("* Could not add student. Try again." + errorThrown);
                 $('#operationResult').css({ "color": "red" });
-
             }
-
         })
-
     }
 
     service.getFormDetails = function () {
@@ -79,7 +71,6 @@ var studentService = (function () {
                 $('#deleteOperationResult').css({ "color": "red" });
             }
         })
-
     }
 
 
@@ -97,11 +88,8 @@ var studentService = (function () {
                 service.getStudents();
                 $('#operationResult').html("Student updated successfully with ID : " + updateId);
                 $('#operationResult').css({ "color": "green" });
-
             }
         })
-
-
     }
 
     service.getStudents = function () {

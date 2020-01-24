@@ -1,0 +1,12 @@
+shift + alt + arrow = duplicate line.
+alt + arrow = line switch
+ctrl + tab = open last file.
+ctrl + arrow = move cursor (word)
+ctrl + home/end = page start/end
+home/end = line start/end
+ctrl + g = line number
+ctrl + \ = split pane
+
+
+modal, 
+snackbar
