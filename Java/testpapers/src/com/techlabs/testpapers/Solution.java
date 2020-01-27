@@ -25,10 +25,19 @@ public class Solution {
 	}
  
     public static void main(String[] args) {
+    	long startTime = System.nanoTime();
     	String y = solution("Braille");
     	String x = "000001110000111010100000010100111000111000100010";
     	System.out.println(x.equals(y));
     	System.out.println(y);
+    	String xx = "000001011110110010100010000000111110101001010100100100101000000000110000111010101"
+				+ "010010111101110000000110100101010101101000000010110101001101100111100011100000000101"
+				+ "010111001100010111010000000011110110010100010000000111000100000101011101111000000100"
+				+ "110101010110110";
+		String yy = solution("The quick brown fox jumps over the lazy dog");
+		System.out.println(xx.equals(yy));
+    	long endTime = System.nanoTime();
+    	System.out.println("Took "+(endTime - startTime) + " ns"); 
     }
 }
 

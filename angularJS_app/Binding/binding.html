@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Binding</title>
+    <script src="../angular.js"></script>
+</head>
+
+<body ng-app="bindingDemo" ng-controller="mainController">
+    <section>
+        <h1>One Way</h1>
+        <h2>Model to View</h2>
+        <p>{{student.firstName}}</p>
+    </section>
+    <hr />
+    <section>
+        <h1>Two Way</h1>
+        <h2>Model to View & View to Model</h2>
+        <input type="text" ng-model="student.firstName">
+        <p>{{student.firstName}}</p>
+
+    </section>
+    <hr />
+    <section>
+        <h1>One Time</h1>
+        <h2>Model to View(Once)</h2>
+        <p>{{::student.firstName}}</p>
+    </section>
+    <hr />
+    <script src="binding.js"></script>
+
+</body>
+
+</html>

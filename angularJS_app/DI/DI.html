@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Event</title>
-    <script src="angular.js"></script>
+    <script src="../angular.js"></script>
 </head>
 
 <body>
@@ -23,24 +23,7 @@
             </h1>
         </section>
     </div>
-    <script>
-        angular.module("moduleA", [])
-            .controller('controllerA', function ($scope, $timeout) {
-                $timeout(function () {
-                    $scope.load();
-                }, 3000);
-                $scope.load = function () {
-                    $scope.student = { id: "101", name: "Prakash", cgpa: "7.8", img: "student.jpeg" };
-                };
-
-                $scope.loadMany = function () {
-                    $scope.studentList = [{ id: "101", name: "Prakash", cgpa: "7.8", img: "student.jpeg" },
-                    { id: "102", name: "Vijay", cgpa: "8.1", img: "student.jpeg" },
-                    { id: "103", name: "Kamal", cgpa: "8.8", img: "student.jpeg" }];
-
-                }
-            })
-    </script>
+    <script src="DI.min.js"></script>
 </body>
 
 </html>

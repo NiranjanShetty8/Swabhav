@@ -3,22 +3,19 @@ package com.techlabs.testpapers;
 public class Paper1 {
 
 	public static void main(String[] args) {
-		System.out.println(solution("Code"));
+		long startTime = System.nanoTime();
 		String x = "000001011110110010100010000000111110101001010100100100101000000000110000111010101"
 				+ "010010111101110000000110100101010101101000000010110101001101100111100011100000000101"
 				+ "010111001100010111010000000011110110010100010000000111000100000101011101111000000100"
 				+ "110101010110110";
 		String y = solution("The quick brown fox jumps over the lazy dog");
 		System.out.println(x.equals(y));
-		String g = "100100101010100110100010";
-		String h = solution("code");
-		System.out.println(g);
-		System.out.println(h);
-		System.out.println(g.equals(h));
 	    String i = "000001110000111010100000010100111000111000100010";
 	    String j = solution("Braille");
-	    System.out.println(i);
-	    System.out.println(j);
+	    System.out.println(i.equals(j));
+
+    	long endTime = System.nanoTime();
+    	System.out.println("Took "+(endTime - startTime) + " ns"); 
 	}
 
 	public static String solution(String str) {
