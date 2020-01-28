@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Constructor Pattern</title>
+    <script src="angular.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Check Console</h1>
+
+    </div>
+
+    <script>
+        function Customer(fName, lName) {
+            this.FirstName = fName;
+            this.LastName = lName;
+
+            this.getFullName = function () {
+                return this.FirstName + this.LastName;
+            }
+        }
+
+        var c1 = new Customer("a", "b");
+        console.log(c1);
+
+        var c2 = new Customer("c", "d");
+        console.log(c2);
+        console.log(c2.__proto__);
+        console.log(Customer.prototype);
+        console.log(Object.prototype.__proto__);
+
+    </script>
+
+</html>
+</body>

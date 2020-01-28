@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AsyncPattern1</title>
+</head>
+
+<body>
+    <h1>Check Console</h1>
+    <script>
+        function getData() {
+            return Math.random() * 10;
+        }
+        var r1 = getData();
+        console.log(r1);
+        function getDataAsync1(fn) {
+            var r = Math.random() * 100;
+            fn(r);
+        }
+        getDataAsync1(function (r) {
+            console.log("this", r);
+        });
+
+        function getDataAsync2(fn) {
+            setTimeout(function () {
+                var r = Math.random() * 100;
+                fn(r);
+            }, 0);
+        }
+        getDataAsync2(function (r) {
+            console.log(r);
+        })
+        console.log("End of Script");
+    </script>
+
+</body>
+
+</html>

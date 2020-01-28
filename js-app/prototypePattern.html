@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prototype Pattern</title>
+    <script src="angular.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Check Console</h1>
+
+    </div>
+
+    <script>
+        function Customer(fName, lName) {
+            this.FirstName = fName;
+            this.LastName = lName;
+            console.log("this is:", this);
+            console.log(Customer);
+            console.log("checking: ", this.prototype);
+        }
+        Customer.prototype.getFullName = function () {
+            return this.FirstName + this.LastName;
+        };
+
+        var c1 = new Customer("a", "b");
+        console.log(c1);
+
+        var c2 = new Customer("c", "d");
+        console.log(c2);
+
+        console.log(Customer.prototype);
+        console.log("Expected type object: ", typeof Customer.prototype);
+        console.log("Expected object address :", Customer.prototype.__proto__);
+        console.log("Expected true : ", Customer.prototype.__proto__ == Object.prototype);
+
+        var foo = {};
+        console.log("Expected true : ", foo.__proto__ == Object.prototype);
+        console.log("Expected null :", Object.prototype.__proto__);
+
+    </script>
+
+</html>
+</body>

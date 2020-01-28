@@ -13,7 +13,7 @@ public class Solution {
         		lexSmallList[1] = index;
         		return lexSmallList;
         	}
-        	while(sum<t && temp <size-1) {
+        	while(sum<=t && temp <size-1) {
         		temp += 1;
         		sum = sum + l[temp];
         		if(sum == t) {

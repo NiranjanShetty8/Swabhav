@@ -1,6 +1,6 @@
 angular.module('math.app', [])
     .factory('MathService', ['$log', '$rootScope', function ($log, $rootScope) {
-        $log.info("Inside Service");
+        $log.info("Using Factory (inside)");
         $rootScope.companyName = "Swabhav";
         var service = {};
         service.cube = function (number) {
@@ -11,9 +11,15 @@ angular.module('math.app', [])
             return num * num;
         }
 
-
-
-
-
         return service;
+    }]);
+
+angular.module('math.app')
+    .controller('ControllerA', ['$scope', 'MathService', '$rootScope', function ($scope, MathService, $rootScope) {
+        // $rootScope.companyName = "Niru";
+        $scope.result = MathService.square(5);
+    }])
+
+    .controller('ControllerB', ['$scope', 'MathService', function ($scope, MathService) {
+        $scope.result = MathService.cube(5);
     }])
