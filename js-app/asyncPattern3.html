@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Async Pattern </title>
+</head>
+
+<body>
+    Async using Promise Chaining
+    <script>
+        var nos = 4;
+        function cubeEvenNo(no) {
+            return new Promise(function (resolve, reject) {
+                if (no % 2 == 0) {
+                    console.log("in resolve")
+                    resolve(no);
+                } else {
+                    reject(no + " is not an even number");
+                }
+            });
+        }
+
+        cubeEvenNo(nos)
+            .then(function (no) {
+                return cubeEvenNo(no * nos);
+            })
+            .then(function (no) {
+                console.log("cube is " + no * nos)
+            })
+            .catch(function (no) {
+                console.log(no);
+
+            });
+        console.log("End of Script")
+    </script>
+
+</body>
+
+</html>

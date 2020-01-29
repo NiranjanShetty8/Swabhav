@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Async using $q</title>
+    <script src="angular.js"></script>
+</head>
+
+<body ng-app="Async" ng-controller="mathControl">
+    <div>{{r}}</div>
+    <script>
+        angular.module("Async", [])
+            .factory("MathService", ['$q', function ($q) {
+                var obj = {};
+                obj.cubeEvenNo = function (no) {
+                    var q = $q.defer()
+                    if (no % 2 == 0) {
+                        q.resolve(no);
+                    } else {
+                        q.reject(no);
+                    }
+                    return q.promise;
+                }
+                return obj;
+            }]);
+        angular.module("Async")
+            .controller('mathControl', ['$scope', 'MathService', function ($scope, MathService) {
+                $scope.num = 3;
+                $scope.promise = MathService.cubeEvenNo($scope.num);
+                console.log($scope.promise)
+
+                $scope.promise
+                    .then(function (no) {
+                        return MathService.cubeEvenNo(no * $scope.num);
+                    })
+                    .then(function (no) {
+                        $scope.r = no * $scope.num;
+                        console.log("cube is " + $scope.r);
+                    })
+                    .catch(function (no) {
+                        $scope.r = no + " Not an even number";
+                    })
+            }]);
+    </script>
+</body>
+
+</html>

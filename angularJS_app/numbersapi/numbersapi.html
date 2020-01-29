@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>XHR</title>
+    <title>Numbers API</title>
     <script src="../angular.js"></script>
 </head>
 
-<body>
+<body ng-app="numbersApi" , ng-controller="controllerA">
     <div class="fullClass"> <span id="label">NO</span> &nbsp;
-        <span> <textarea id="textArea" placeholder="Enter a number"></textarea> </span>
-        <span></span><button id="button">Facts</button> </span></div>
+        <span> <input type="number" ng-model="number"> </span>
+        <button type="button" ng-click="getFacts()">Facts</button>
+    </div>
     <div id="warning"></div>
-    <div><input id="check" type="checkbox">Even</div>
-    <div id="facts"></div>
+    <div id="facts">{{data}}</div>
     <script src="numbersapi.js"></script>
+
 
 </body>
 

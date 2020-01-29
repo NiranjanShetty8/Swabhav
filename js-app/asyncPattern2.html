@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Async Pattern</title>
+
+</head>
+
+<body>
+    Async Using Promise
+
+    <script>
+        function getData() {
+            return new Promise(function (resolve, reject) {
+                var r = Math.floor(Math.random() * 10);
+                if (r > 5) {
+                    resolve("Number is :" + r + " whose square is : " + r * r);
+                } else {
+                    reject("Number is " + r + " which is less than 5 ");
+                }
+            })
+        }
+        getData()
+            .then(function (r) {
+                console.log("In then: " + r);
+            })
+            .catch(function (e) {
+                console.log("In catch: " + e);
+            });
+        console.log("End of Script");
+    </script>
+</body>
+
+</html>
