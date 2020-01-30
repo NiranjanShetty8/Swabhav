@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Custom Filter</title>
+    <script src="angular.js"></script>
+
+</head>
+
+<body ng-app='FilterModule' ng-controller='empController'>
+    <div>
+        E_No: <input type="number" ng-model="emp.eNo"><br />
+        E_Name: <input type="text" ng-model="emp.eName"><br />
+        Salary: <input type="number" ng-model="emp.salary" style="background-color : {{emp.salary | salaryToColor }}">
+        <!-- Salary: <input type="number" ng-model="emp.salary"
+            ng-style="{'background-color': '{{emp.salary|salaryToColor}}'}"> -->
+        {{emp.salary}}
+    </div>
+    <script>
+        angular.module('FilterModule', [])
+            .filter('salaryToColor', function () {
+                return function (salary) {
+                    if (salary < 10000) {
+                        return 'red';
+                    } else if (salary <= 25000) {
+                        return 'yellow';
+                    }
+                    return 'green';
+                }
+            })
+            .controller('empController', ['$scope', function ($scope) {
+                $scope.emp = { eNo: 101, eName: 'Niranjan', salary: 90000 };
+                // $scope.myStyle = { 'background-color': 'blue' };
+                $scope.show = function () {
+                    console.log("hellooo");
+                }
+
+            }])
+
+    </script>
+</body>
+
+</html>

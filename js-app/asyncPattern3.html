@@ -11,24 +11,25 @@
 <body>
     Async using Promise Chaining
     <script>
-        var nos = 4;
+        var nos = 2;
         function cubeEvenNo(no) {
             return new Promise(function (resolve, reject) {
                 if (no % 2 == 0) {
                     console.log("in resolve")
-                    resolve(no);
+                    resolve(no * no * no);
                 } else {
                     reject(no + " is not an even number");
                 }
             });
         }
 
-        cubeEvenNo(nos)
+        cubeEvenNo(3)
             .then(function (no) {
-                return cubeEvenNo(no * nos);
+                console.log("First cube is " + no);
+                return cubeEvenNo(no);
             })
             .then(function (no) {
-                console.log("cube is " + no * nos)
+                console.log("Second cube is " + no)
             })
             .catch(function (no) {
                 console.log(no);

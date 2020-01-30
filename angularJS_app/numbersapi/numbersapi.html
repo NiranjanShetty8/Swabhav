@@ -12,7 +12,8 @@
 <body ng-app="numbersApi" , ng-controller="controllerA">
     <div class="fullClass"> <span id="label">NO</span> &nbsp;
         <span> <input type="number" ng-model="number"> </span>
-        <button type="button" ng-click="getFacts()">Facts</button>
+        <button type="button" ng-click="execute()">Facts</button><br>
+        {{error}}
     </div>
     <div id="warning"></div>
     <div id="facts">{{data}}</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Api</title>
+    <script src="../angular.js"></script>
+</head>
+
+<body ng-app="StudentAPI" ng-controller="StudentController">
+    <div id="addForm">
+
+        <form name="add">
+            Roll No : &nbsp; <input type="number" name="rollNo"><br>
+            Name : &nbsp; <input type="text" name="name"><br>
+            Age : &nbsp; <input type="number" name="age"><br>
+            E-mail ID : &nbsp; <input type="text" name="email"><br>
+            Date : &nbsp; <input type="date" name="date"><br>
+            Gender : &nbsp; <input id="male" type="radio" name="isMale" value="true">Male
+            <input id="female" type="radio" name="isMale" value="false">Female <br>
+
+            <input type="reset" id="addButton" value="Add" onclick="studentService.addStudent()">
+            <input type="reset" id="updateButton" value="Update" onclick="studentService.updateStudent()">
+        </form>
+    </div>
+    <div class="message" id="operationResult"></div>
+    <div><button type="button" id="toggleForm">&#9943;</button></div>
+    <div id="count"></div>
+    <br>
+    <div id="display">{{allStudents}}
+
+        <!-- <table id="displayTable">
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email-ID</th>
+                <th>Date</th>
+                <th>isMale</th>
+                <th>ID</th>
+                <th>Click to Delete Student</th>
+            </tr>
+        </table> -->
+        <div class="message" id="deleteOperationResult"></div>
+    </div>
+    <script src="studentapi.js"></script>
+</body>
+
+</html>

@@ -13,10 +13,11 @@ angular.module('numbersApi', [])
                     method: "GET",
                     url: "http://numbersapi.com/" + number
                 }).then(function success(response) {
+                    console.log("in get Facts: ", response);
                     resolve(response.data)
 
-                }, function error(reject) {
-                    reject(reject.data)
+                }).catch(function error(err) {
+                    reject(err)
                 });
             })
         }
@@ -25,12 +26,18 @@ angular.module('numbersApi', [])
 
 angular.module('numbersApi')
     .controller('controllerA', ['$scope', '$http', 'NumbersApiService', function ($scope, $http, NumbersApiService) {
-        $scope.number;
-        $scope.data = NumbersApiService.getFacts(2);
-        $scope.data
-
-        console.log($scope.data);
-
+        $scope.error = "";
+        // $scope.data = NumbersApiService.getFacts($scope.number);
+        $scope.execute = function () {
+            NumbersApiService.getFacts($scope.number)
+                .then(function (num) {
+                    $scope.data = num;
+                    console.log($scope.data);
+                }).catch(function (err) {
+                    console.log(err);
+                    $scope.error = err;
+                })
+        }
 
     }]);
 function store() {
