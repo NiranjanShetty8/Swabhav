@@ -7,42 +7,87 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Api</title>
     <script src="../angular.js"></script>
+    <link href="studentapi.css" type="text/css" rel="stylesheet">
 </head>
 
 <body ng-app="StudentAPI" ng-controller="StudentController">
-    <div id="addForm">
+    <div>
+        <form name="registrationForm">
+            <p>Fill in the Student details </p>
+            <div>
+                Roll No : &nbsp; <input type="number" name="rollNo" ng-model="student.rollNo" required>
+                <span class="error" ng-show="registrationForm.rollNo.$invalid">*
+                    <span ng-show="registrationForm.rollNo.$dirty && registrationForm.rollNo.$invalid">
+                        Roll no is required</span>
+            </div>
+            <div>
+                Name : &nbsp; <input type="text" name="name" ng-model="student.name" required>
+                <span class="error" ng-show="registrationForm.name.$invalid">*
+                    <span ng-show="registrationForm.name.$dirty && registrationForm.name.$invalid">Name is
+                        Required</span>
+                </span>
+            </div>
+            <div>
+                Age : &nbsp; <input type="number" name="age" ng-model="student.age" || required>
+                <span class="error" ng-show="registrationForm.age.$invalid">*
+                    <span ng-show="registrationForm.age.$dirty && registrationForm.age.$invalid">Age is
+                        required</span>
+                </span>
+            </div>
+            <div>
+                E-mail ID : &nbsp; <input type="text" name="email" ng-model="student.email">
 
-        <form name="add">
-            Roll No : &nbsp; <input type="number" name="rollNo"><br>
-            Name : &nbsp; <input type="text" name="name"><br>
-            Age : &nbsp; <input type="number" name="age"><br>
-            E-mail ID : &nbsp; <input type="text" name="email"><br>
-            Date : &nbsp; <input type="date" name="date"><br>
-            Gender : &nbsp; <input id="male" type="radio" name="isMale" value="true">Male
-            <input id="female" type="radio" name="isMale" value="false">Female <br>
+            </div>
+            <div>
+                Date : &nbsp; <input type="date" name="date" ng-model="student.date" required>
+                <span class="error" ng-show="registrationForm.date.$invalid">*
+                    <span ng-show="registrationForm.date.$dirty && registrationForm.date.$invalid">Date is
+                        Required</span>
+                </span>
+            </div>
+            <div>
+                Gender : &nbsp;
+                <input type="radio" name="isMale" value="true" ng-model="student.isMale "
+                    ng-required="!student.isMale">Male
+                <input type="radio" name="isMale" value="false" ng-model="student.isMale"
+                    ng-required="!student.isMale">Female
+                <span class="error" ng-show="registrationForm.isMale.$invalid">*
+                </span>
+            </div>
 
-            <input type="reset" id="addButton" value="Add" onclick="studentService.addStudent()">
-            <input type="reset" id="updateButton" value="Update" onclick="studentService.updateStudent()">
+            <input type="button" id="addButton" value="Add" ng-disabled="registrationForm.$invalid || loading"
+                ng-click="addStudent()" />
         </form>
     </div>
-    <div class="message" id="operationResult"></div>
-    <div><button type="button" id="toggleForm">&#9943;</button></div>
-    <div id="count"></div>
-    <br>
-    <div id="display">{{allStudents}}
+    <div id="addMessage">{{addedMessage}}
+    </div>
+    <div id="count">{{count}}</div>
 
-        <!-- <table id="displayTable">
+    <div class="error">{{error}}</div>
+    <div id="display">
+
+        <table id="displayTable">
             <tr>
                 <th>Roll No</th>
                 <th>Name</th>
                 <th>Age</th>
                 <th>Email-ID</th>
                 <th>Date</th>
-                <th>isMale</th>
+                <th>Gender</th>
                 <th>ID</th>
-                <th>Click to Delete Student</th>
             </tr>
-        </table> -->
+            <tr ng-repeat="loadedStudent in allStudents">
+                <td>{{loadedStudent.rollNo}}</td>
+                <td>{{loadedStudent.name}}</td>
+                <td>{{loadedStudent.age}}</td>
+                <td>{{loadedStudent.email}}</td>
+                <td>{{loadedStudent.date}}</td>
+                <td>{{loadedStudent.isMale? "Male": "Female" }}</td>
+                <td>{{loadedStudent.id}}</td>
+
+            </tr>
+        </table>
+
         <div class="message" id="deleteOperationResult"></div>
     </div>
     <script src="studentapi.js"></script>

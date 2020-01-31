@@ -1,0 +1,17 @@
+.error{
+    color: red;
+}
+
+#addMessage{
+    color: green;
+}
+
+#count{
+    color: cornflowerblue;
+    font-style: oblique;
+}
+
+/* div>span{
+    color: red;
+    font-style: italic;
+} */
