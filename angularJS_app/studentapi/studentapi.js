@@ -46,11 +46,10 @@ angular.module('StudentAPI', [])
         $scope.loading = false;
 
         $scope.addStudent = function () {
-            new Date
-            var date = new Date($scope.student.date);
-            mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+            var date = new Date($scope.newDate),
+                month = ("0" + (date.getMonth() + 1)).slice(-2),
                 day = ("0" + date.getDate()).slice(-2);
-            $scope.student.date = [day, mnth, date.getFullYear()].join("/");
+            $scope.student.date = [day, month, date.getFullYear()].join("/");
 
             $scope.loading = true;
             studentService.add($scope.student)

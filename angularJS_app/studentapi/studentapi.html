@@ -15,20 +15,20 @@
         <form name="registrationForm">
             <p>Fill in the Student details </p>
             <div>
-                Roll No : &nbsp; <input type="number" name="rollNo" ng-model="student.rollNo" required>
+                Roll No : &nbsp; <input type="number" name="rollNo" ng-model="student.rollNo" ng-required="true">
                 <span class="error" ng-show="registrationForm.rollNo.$invalid">*
                     <span ng-show="registrationForm.rollNo.$dirty && registrationForm.rollNo.$invalid">
                         Roll no is required</span>
             </div>
             <div>
-                Name : &nbsp; <input type="text" name="name" ng-model="student.name" required>
+                Name : &nbsp; <input type="text" name="name" ng-model="student.name" ng-required="true">
                 <span class="error" ng-show="registrationForm.name.$invalid">*
                     <span ng-show="registrationForm.name.$dirty && registrationForm.name.$invalid">Name is
                         Required</span>
                 </span>
             </div>
             <div>
-                Age : &nbsp; <input type="number" name="age" ng-model="student.age" || required>
+                Age : &nbsp; <input type="number" name="age" ng-model="student.age" ng-required="true">
                 <span class="error" ng-show="registrationForm.age.$invalid">*
                     <span ng-show="registrationForm.age.$dirty && registrationForm.age.$invalid">Age is
                         required</span>
@@ -39,7 +39,7 @@
 
             </div>
             <div>
-                Date : &nbsp; <input type="date" name="date" ng-model="student.date" required>
+                Date : &nbsp; <input type="date" name="date" ng-model="newDate" ng-required="true">
                 <span class="error" ng-show="registrationForm.date.$invalid">*
                     <span ng-show="registrationForm.date.$dirty && registrationForm.date.$invalid">Date is
                         Required</span>
@@ -47,15 +47,13 @@
             </div>
             <div>
                 Gender : &nbsp;
-                <input type="radio" name="isMale" value="true" ng-model="student.isMale "
-                    ng-required="!student.isMale">Male
-                <input type="radio" name="isMale" value="false" ng-model="student.isMale"
-                    ng-required="!student.isMale">Female
+                <input type="radio" name="isMale" value="true" ng-model="student.isMale " ng-required="true">Male
+                <input type="radio" name="isMale" value="false" ng-model="student.isMale" ng-required="true">Female
                 <span class="error" ng-show="registrationForm.isMale.$invalid">*
                 </span>
             </div>
 
-            <input type="button" id="addButton" value="Add" ng-disabled="registrationForm.$invalid || loading"
+            <input type="reset" id="addButton" value="Add" ng-disabled="registrationForm.$invalid || loading"
                 ng-click="addStudent()" />
         </form>
     </div>
