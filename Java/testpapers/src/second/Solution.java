@@ -1,44 +1,71 @@
 package second;
 
 public class Solution {
-    public static int[] solution(int[] l, int t) {
-    	int lexSmallList[] = {-1,-1};
-        int size = l.length;
-        int sum =0;
-        for(int index =0;index<size;index++) {
-        	int temp = index;
-        	sum = l[index];
-        	if(sum==t) {
-        		lexSmallList[0] = index;
-        		lexSmallList[1] = index;
-        		return lexSmallList;
-        	}
-        	while(sum<=t && temp <size-1) {
-        		temp += 1;
-        		sum = sum + l[temp];
-        		if(sum == t) {
-        			lexSmallList[0]= index;
-        			lexSmallList[1] = temp;
-        			return lexSmallList;
-        		}
-        		
-        	}
-        }
-        return lexSmallList;
-    }
-    
-    public static void main(String [] args) {
-    	long startTime = System.nanoTime();
 
+	public static int[] solution(int h, int[] q) {
+		int sol[] = new int[q.length];
+		int root = (int) Math.pow(2, h) - 1;
+		for (int index = 0; index < q.length; index++) {
+			if (q[index] <= 0 || q[index] >= root) {
+				sol[index] = -1;
+				continue;
+			} else if (q[index] >= root - (h - 1)) {
+				sol[index] = q[index] + 1;
+				continue;
+			} else if (q[index] == 2) {
+				sol[index] = 3;
+				continue;
+			} else if ((((q[index]) & q[index] + 1)) == 0) {
+				sol[index] = (q[index] * 2) + 1;
+				continue;
+			} else if ((((q[index]) & q[index] - 1)) == 0) {
+				sol[index] = (q[index] + 2);
+				continue;
+			} else if ((((q[index]) & q[index] + 2)) == 0) {
+				sol[index] = q[index] + 1;
+				continue;
+			} else if (((((q[index]) - 1) & (q[index] - 2) - 1)) == 0) {
+				sol[index] = (q[index] + 1);
+				continue;
+			}  else if (((((q[index]) - 2) & (q[index] - 3) - 1)) == 0) {
+				sol[index] = (q[index] + 4);
+				continue;
+			} else if (((((q[index]) - 3) & (q[index] - 4) - 1)) == 0) {
+				sol[index] = (q[index] + 2);
+				continue;
+			} else if (q[index] % 3 == 0) {
+				sol[index] = q[index] + 1;
+				continue;
+			}else {
+				System.out.println("here is " + q[index]);
+				sol[index] = q[index] + 1;
+			}
+		}
+		return sol;
+	}
 
-//    	int[] qts = {23,2,1,3,8,4,3,2,16,14};
-      	int[] qts = {23, 4,2,1,3,8,3,2,16,14};
-    	int[] ans = solution(qts,4);
-    	for(int i : ans) {
-    		System.out.println(i);
-    	}
+	public static void main(String[] args) {
+		int[] test = new int[63];
+		int k = 1;
+		for (int j = 0; j < 63; j++) {
+			test[j] = j + 1;
+		}
+		int[] ans = solution(6, test);
+		for (int i : ans) {
+			System.out.println(k + " " + i);
+			k += 1;
+		}
 
-    	long endTime = System.nanoTime();
-    	System.out.println("Took "+(endTime - startTime) + " ns"); 
-    }
+	}
+
 }
+//public int arrayGenerator(int number) {
+//	for(int i=height-1;i>1;i--) {
+//		sol[2*current+1] = temp - (int)Math.pow(2,i);
+//		
+//		
+//		sol[2*current+2] = temp-1;
+//		
+//	}
+//	
+//}

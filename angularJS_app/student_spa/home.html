@@ -1,0 +1,39 @@
+<div id="addMessage">
+    {{addedMessage}}
+</div>
+<div id="count">
+    {{count}}
+</div>
+
+<div class="error">{{error}}</div>
+<div id="display" class="col-lg-12 col-xm-2">
+
+    <table id="displayTable">
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email-ID</th>
+            <th>Date</th>
+            <th>Gender</th>
+            <th>ID</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr ng-repeat="loadedStudent in allStudents">
+            <td>{{loadedStudent.rollNo}}</td>
+            <td>{{loadedStudent.name}}</td>
+            <td>{{loadedStudent.age}}</td>
+            <td>{{loadedStudent.email}}</td>
+            <td>{{loadedStudent.date}}</td>
+            <td>{{loadedStudent.isMale? "Male": "Female" }}</td>
+            <td>{{loadedStudent.id}}</td>
+            <td> <a href="#!edit/{{loadedStudent.id}}">Edit</a></td>
+            <td><input type="button" value="Delete" class="btn btn-primary" ng-click="deleteStudent(loadedStudent)"></a>
+            </td>
+
+        </tr>
+    </table>
+
+    <div class="message" id="deleteOperationResult"></div>
+</div>
