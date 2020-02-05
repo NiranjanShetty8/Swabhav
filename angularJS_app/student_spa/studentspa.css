@@ -1,0 +1,75 @@
+.error{
+    color: red;
+  }
+
+#deleteOperationResult{
+  color: red;
+}
+  
+  #addMessage{
+    color: green;
+}
+
+.rollNo{
+  margin-left: 1.0%;
+}
+
+.name{
+  margin-left: 1.6%;
+}
+
+.age{
+  margin-left: 2.55%;
+}
+
+.date{
+ margin-left: 2.35%;
+}
+
+.gender{
+  margin-left: 1.1%;
+}
+
+#count{
+    color: darkred;
+    font-style: oblique;
+    font-size: x-large;
+    margin-left: 30%;
+}
+
+th {
+  text-align: center;
+  color: cadetblue;
+}
+
+#tableHeader{
+  text-align: center;
+}
+
+form{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: oblique;
+}
+
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+
+  }
+  th, td {
+    padding: 15px;
+    text-align: center;
+  }
+  table#displayTable {
+    width: 100%;    
+    background-color: #f1f1c1;
+  }
+
+p {
+    font-size: xx-large;
+    color: darkblue;
+}
+ 

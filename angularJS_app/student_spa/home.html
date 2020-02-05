@@ -16,7 +16,7 @@
             <th>Email-ID</th>
             <th>Date</th>
             <th>Gender</th>
-            <th>ID</th>
+            <!-- <th>ID</th> -->
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -27,13 +27,14 @@
             <td>{{loadedStudent.email}}</td>
             <td>{{loadedStudent.date}}</td>
             <td>{{loadedStudent.isMale? "Male": "Female" }}</td>
-            <td>{{loadedStudent.id}}</td>
+            <!-- <td>{{loadedStudent.id}}</td> -->
             <td> <a href="#!edit/{{loadedStudent.id}}">Edit</a></td>
-            <td><input type="button" value="Delete" class="btn btn-primary" ng-click="deleteStudent(loadedStudent)"></a>
+            <td><input id="deleteButton" type="button" value="Delete" class="btn btn-danger"
+                    ng-click="deleteStudent(loadedStudent)"></a>
             </td>
 
         </tr>
     </table>
 
-    <div class="message" id="deleteOperationResult"></div>
+    <div class="message" id="deleteOperationResult">{{deleted}}</div>
 </div>
