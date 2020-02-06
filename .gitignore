@@ -144,6 +144,8 @@ $RECYCLE.BIN/
 ### Go Patch ###
 /vendor/
 /Godeps/
+/Go/pkg
+/Go/bin
 
 # End of https://www.gitignore.io/api/go
 
