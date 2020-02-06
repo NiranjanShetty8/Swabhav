@@ -6,4 +6,4 @@ console.log(add);
 var stud = new Student("Niranjan", "Shetty");
 console.log(stud);
 stud.LastName = "Shettyy";
-console.log(stud);
+console.log("After modification", stud);

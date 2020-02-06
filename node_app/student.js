@@ -25,11 +25,11 @@ var Student = /** @class */ (function () {
     return Student;
 }());
 exports.Student = Student;
-// var s1 = new Student("ab", "cd")
-// console.log(s1.FirstName)
-// console.log(s1.LastName)
-// s1.LastName = "Champ";
-// console.log(s1.LastName)
+var s1 = new Student("ab", "cd");
+console.log(s1.FirstName);
+console.log(s1.LastName);
+s1.LastName = "Champ";
+console.log(s1.LastName);
 var Address = /** @class */ (function () {
     function Address(_description) {
         this._description = _description;

@@ -15,11 +15,11 @@ export class Student {
     }
 }
 
-// var s1 = new Student("ab", "cd")
-// console.log(s1.FirstName)
-// console.log(s1.LastName)
-// s1.LastName = "Champ";
-// console.log(s1.LastName)
+var s1 = new Student("ab", "cd")
+console.log(s1.FirstName)
+console.log(s1.LastName)
+s1.LastName = "Champ";
+console.log(s1.LastName)
 
 export class Address {
     constructor(private _description: string) {
