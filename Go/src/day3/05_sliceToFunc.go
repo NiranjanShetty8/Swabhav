@@ -36,4 +36,6 @@ func modifyPtr(slice []int, number *int) {
 	for i := range slice {
 		slice[i] = *number
 	}
+	fmt.Println("this is ", &slice[0])
+	fmt.Println("this is ", &slice[1])
 }
