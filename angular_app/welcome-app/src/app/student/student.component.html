@@ -1,6 +1,18 @@
-<section>
-    <p [innerHtml]="'StudentComponent'"></p>
-    <h1 [innerHtml]="student.firstName"></h1>
-    <h1 [innerHtml]="maxHeight"></h1>
-    <img [src]="student.profilePicture" [style.widhth.px]="maxWidth" [style.height.px]="maxHeight">
-</section>
+<input type="button" class="btn btn-primary" value="Load All Students" (click)="loadAllStudents()">
+<div class="col-lg-6">
+    <div class="card" style="width: 25rem; " *ngFor="let IStudent of allStudents">
+        <section class="jumbotron jumbotron-fluid" [style.backgroundColor]="IStudent.cgpa | classifyCgpa">
+            <!-- <p [innerHtml]="'StudentComponent'"></p> -->
+
+            First Name : <span [innerHtml]="IStudent.firstName"></span><br />
+            Last Name : <span [innerHtml]="IStudent.lastName"></span><br />
+            CGPA : <span [innerHtml]="IStudent.cgpa"></span><br />
+            <!-- <h1 [innerHtml]="maxHeight"></h1> -->
+            <!-- <h2>{{"Niranjan"| uppercase}}</h2> -->
+            <!-- <h2>{{22/7 | number}}</h2> -->
+            <img [src]="IStudent.profilePicture" [style.width.px]="maxWidth" [style.height.px]="maxHeight">
+            <input type="button" value="change" class="btn btn-primary" (click)="changeStudent($event,IStudent)"
+                [disabled]="buttonDisabled">
+        </section>
+    </div>
+</div>

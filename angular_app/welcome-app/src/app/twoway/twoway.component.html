@@ -1,0 +1,7 @@
+<div class="card">
+    <span>First Name</span>&nbsp;<input type="text" [ngModel]="firstName" (ngModelChange)="nameChange($event)">
+    {{firstName}}<br />
+    <span>Last Name</span>&nbsp;<input type="text" [(ngModel)]="lastName">
+    {{lastName}}
+
+</div>

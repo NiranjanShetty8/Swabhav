@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+var height int = 50
+
 func main() {
 	var name = "Niranjan"
 	var cgpa float64 = 7.5
