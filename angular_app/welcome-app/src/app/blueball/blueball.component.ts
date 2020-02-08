@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 interface IBall {
   color: string
-  text: number
+  id: number
+
+
 }
 
 @Component({
@@ -12,6 +14,8 @@ interface IBall {
 
 
 export class BlueballComponent implements OnInit {
+  gameRunning = false
+
 
 
   constructor() { }

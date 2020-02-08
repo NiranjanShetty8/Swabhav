@@ -1,1 +1,18 @@
-<p>blueball works!</p>
+<div id="firstPage" class="card" *ngIf="!gameRunning; else secondPage">
+    <h1>Objective :</h1>
+    &nbsp; &nbsp; There is one blue ball in the list of the given balls.
+    Your goal is to find out which ball is the blue ball.
+    <h2>Mechanics of the game :</h2>
+    <div id="rules">
+        <ul id="rulesList">
+            <li>Pick a ball from the given list of balls</li>
+            <li>If the Selected ball turns Red it means the blue ball is not before the selected ball. </li>
+            <li>If the selected ball turns Green it means the blue ball is not after the selected ball.</li>
+        </ul>
+        <button id="startButton" type="button">Start game</button>
+    </div>
+</div>
+
+<ng-template #secondPage>HEllo</ng-template>
+
+<div id="runningGame"></div>
