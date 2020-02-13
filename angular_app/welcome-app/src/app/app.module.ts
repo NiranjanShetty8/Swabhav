@@ -6,6 +6,7 @@ import { WelcomeComponent } from '../app/welcome/welcome.component';
 import { StudentComponent, ClassifyCgpa } from './student/student.component';
 import { TwowayComponent } from './twoway/twoway.component';
 import { BlueballComponent } from './blueball/blueball.component';
+// import { QuestionBankComponent } from './question-bank/question-bank.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { BlueballComponent } from './blueball/blueball.component';
     StudentComponent,
     ClassifyCgpa,
     TwowayComponent,
-    BlueballComponent
+    BlueballComponent,
+    // QuestionBankComponent
   ],
   imports: [
     BrowserModule,

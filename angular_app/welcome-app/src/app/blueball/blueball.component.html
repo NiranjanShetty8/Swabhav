@@ -1,18 +1,43 @@
-<div id="firstPage" class="card" *ngIf="!gameRunning; else secondPage">
-    <h1>Objective :</h1>
+<h1 *ngIf="!gameRunning"
+    style="font-size: 10rem; font-family: 'Times New Roman', Times, serif; color: darkblue; align-content: center;">
+    Welcome
+    to the Blue Ball Game</h1>
+<div id="firstPage" class="card" *ngIf="!gameRunning"
+    style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: x-large;">
+    <h1 style="color: blue;">Objective :</h1>
     &nbsp; &nbsp; There is one blue ball in the list of the given balls.
     Your goal is to find out which ball is the blue ball.
-    <h2>Mechanics of the game :</h2>
-    <div id="rules">
+    <h2 style="color: blue;">Mechanics of the game :</h2>
+    <div id="rules"
+        style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: x-large;">
         <ul id="rulesList">
             <li>Pick a ball from the given list of balls</li>
             <li>If the Selected ball turns Red it means the blue ball is not before the selected ball. </li>
             <li>If the selected ball turns Green it means the blue ball is not after the selected ball.</li>
         </ul>
-        <button id="startButton" type="button">Start game</button>
+        <button class="btn btn-primary" id="startButton" type="button" (click)="startGame()">Start game</button>
     </div>
 </div>
 
-<ng-template #secondPage>HEllo</ng-template>
+<div *ngIf="gameRunning" style="background-color: whitesmoke;" class="col-lg-10">
+    <div class="col-xs-10">
+        <div class="col-s-10">
+            <div class="col-m-10">
+                <h3>Attempts Remaining: {{attempts}}</h3>
 
-<div id="runningGame"></div>
+                <div>
+                    <button *ngFor="let ball of balls" (click)="onGuess(ball.id)"
+                        style="border-radius: 50%; height: 8rem; width: 8rem; font-size: xx-large; font-style: oblique;"
+                        class="btn" [disabled]="ball.disabled" [style.backgroundColor]="ball.defaultColor">
+                        {{ball.id}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="gameFinished">
+    <h1>Wanna play Again?</h1>
+    <button class="btn btn-primary" (click)="startGame()">Play</button> &nbsp;
+    <button class="btn btn-primary" (click)="endGame()">Home</button>
+</div>
