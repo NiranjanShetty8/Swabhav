@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { isBoolean } from 'util';
-import { isAbsolute } from 'path';
-import { InjectableCompiler } from '@angular/compiler/src/injectable_compiler';
-import { TIMEOUT } from 'dns';
-import { BuiltinType } from '@angular/compiler';
+
 interface IBall {
   defaultColor: string
   id: number

@@ -1,1 +1,9 @@
-<p>question-bank works!</p>
+<div *ngFor='let question of questions'>
+    <h1>Question No : {{question.id}}</h1>
+    {{question.id}}) {{question.body}} <br />
+    <input type="radio" id=0 name="option">{{question.options[0]}}<br />
+    <input type="radio" id=1 name="option">{{question.options[1]}}<br />
+    <input type="radio" id=2 name="option">{{question.options[2]}}<br />
+    <input type="radio" id=3 name="option">{{question.options[3]}}<br />
+
+</div>

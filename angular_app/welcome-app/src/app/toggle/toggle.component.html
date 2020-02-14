@@ -1,0 +1,5 @@
+<span>
+    {{title || 'toggleButton'}}
+</span>
+
+<input type="button" value={{state}} (click)='changeState()' *ngIf="set" [style.color]='{{onColor}}' />

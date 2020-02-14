@@ -6,7 +6,9 @@ import { WelcomeComponent } from '../app/welcome/welcome.component';
 import { StudentComponent, ClassifyCgpa } from './student/student.component';
 import { TwowayComponent } from './twoway/twoway.component';
 import { BlueballComponent } from './blueball/blueball.component';
-// import { QuestionBankComponent } from './question-bank/question-bank.component';
+import { QuestionBankComponent } from './question-bank/question-bank.component';
+import { MasterComponent } from './master/master.component';
+import { ToggleComponent } from './toggle/toggle.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +17,15 @@ import { BlueballComponent } from './blueball/blueball.component';
     ClassifyCgpa,
     TwowayComponent,
     BlueballComponent,
-    // QuestionBankComponent
+    QuestionBankComponent,
+    MasterComponent,
+    ToggleComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
-
   ],
   providers: [],
-  bootstrap: [BlueballComponent]
+  bootstrap: [MasterComponent]
 })
 export class AppModule { }
