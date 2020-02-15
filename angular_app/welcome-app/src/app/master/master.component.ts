@@ -13,4 +13,15 @@ export class MasterComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleHandler($event) {
+    console.log($event)
+  }
+
+
+  ratingHandler($event) {
+    console.log($event)
+  }
+
+
+
 }

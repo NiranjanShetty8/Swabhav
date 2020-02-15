@@ -9,6 +9,7 @@ import { BlueballComponent } from './blueball/blueball.component';
 import { QuestionBankComponent } from './question-bank/question-bank.component';
 import { MasterComponent } from './master/master.component';
 import { ToggleComponent } from './toggle/toggle.component';
+import { RatingComponent } from './RatingComponent/rating.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ToggleComponent } from './toggle/toggle.component';
     BlueballComponent,
     QuestionBankComponent,
     MasterComponent,
-    ToggleComponent
+    ToggleComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,

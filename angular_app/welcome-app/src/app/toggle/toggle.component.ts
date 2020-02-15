@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MasterComponent } from '../master/master.component'
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'sw-toggle',
@@ -10,29 +9,46 @@ import { MasterComponent } from '../master/master.component'
 export class ToggleComponent implements OnInit {
     @Input() title: string
     state: number = 0
-    @Input() onColor: string = "red"
-    @Input() set: boolean = true
+    set: boolean
     @Input() offColor: string
+    @Input() onColor: string
+    @Output() toggleEvent: EventEmitter<string>
 
 
     constructor() {
         console.log("in constructor")
         console.log(this.title)
+        console.log(this.set)
+        this.toggleEvent = new EventEmitter<string>();
     }
 
-    changeState() {
+    clickHandler() {
         if (this.state == 0) {
             this.state = 1
+            this.set = true;
         } else {
             this.state = 0
+            this.set = false;
         }
-        console.log(this.state)
+        this.toggleEvent.emit("Trying to emit from child " + this.state);
     }
+
+    // changeState() {
+    //     if (this.state == 0) {
+    //         this.state = 1
+    //         this.set = true;
+    //     } else {
+    //         this.state = 0
+    //         this.set = false;
+    //     }
+    //     console.log(this.state)
+    // }
 
 
     ngOnInit(): void {
         console.log("In on INIT");
         console.log(this.title)
+
     }
 
 }

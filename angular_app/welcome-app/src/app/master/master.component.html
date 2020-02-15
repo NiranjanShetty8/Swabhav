@@ -1,2 +1,5 @@
-<sw-toggle [title]="'ToggleMe'" [offColor]="'red'" [onColor]="'green'"></sw-toggle>
-<span>{{title}}</span>
+<!-- <sw-toggle [title]="'ToggleMe'" [offColor]="'red'" [onColor]="'green'" (toggleEvent)="toggleHandler($event)">
+</sw-toggle>
+<span>{{title}}</span> -->
+
+<sw-rating [rating]='4.5' (ratingEvent)="ratingHandler($event)"></sw-rating>
