@@ -15,8 +15,14 @@ export class RatingComponent implements OnInit {
     constructor() {
         this.ratingEvent = new EventEmitter<number>();
         this.ratingEvent.emit(this.rating);
-        console.log(this.ratingEvent)
 
+
+    }
+
+    onHover($event) {
+        this.ratingEvent.emit(this.rating);
+        // console.log(this.ratingEvent)
+        // console.log("$event is : ", $event)
     }
 
 

@@ -10,6 +10,8 @@ import { QuestionBankComponent } from './question-bank/question-bank.component';
 import { MasterComponent } from './master/master.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { RatingComponent } from './RatingComponent/rating.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import { RatingComponent } from './RatingComponent/rating.component';
     QuestionBankComponent,
     MasterComponent,
     ToggleComponent,
-    RatingComponent
+    RatingComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [MasterComponent]
+  bootstrap: [HttpComponent]
 })
 export class AppModule { }

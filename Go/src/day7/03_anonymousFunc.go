@@ -51,9 +51,10 @@ func doProcessing(no int, callback func(string)) {
 func case5() {
 	var manyFunctions []func() int
 	for i := 1; i <= 5; i++ {
+		cleanI := i * 10
 		manyFunctions = append(manyFunctions, func(i int) func() int {
 			return func() int {
-				return i * 10
+				return cleanI
 			}
 		}(i))
 	}

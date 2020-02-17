@@ -19,7 +19,7 @@ export class MasterComponent implements OnInit {
 
 
   ratingHandler($event) {
-    console.log($event)
+    console.log("Master says :", $event)
   }
 
 
