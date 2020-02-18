@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { StudentService } from './service/StudentService';
+import { IStudent } from './service/IStudent';
 
 
 @Component({
@@ -10,9 +11,12 @@ import { StudentService } from './service/StudentService';
 })
 export class HttpComponent implements OnInit {
 
+  allStudents: IStudent[]
   constructor(private _service: StudentService) {
 
+
   }
+
   // apiLink = 'http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students';
 
   // showStudent() {
@@ -33,11 +37,15 @@ export class HttpComponent implements OnInit {
   // }
 
 
-
   ngOnInit() {
     // this.showStudent()
-    console.log("HEllo")
-    console.log(this._service.getAllStudents())
+    this._service.getAllStudents().subscribe((data: any) => {
+      this.allStudents = data;
+    }, (err) => {
+      console.log('Error:', err);
+    })
+    // this._service.addStudent()
+
   }
 
 }
