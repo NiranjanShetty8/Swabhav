@@ -1,0 +1,13 @@
+.error {
+    color: red;
+}
+
+input {
+    position: sticky;
+    grid-column: inherit;
+}
+
+.formInput {
+    /* align-content: flex-end;
+    text-align: right; */
+}

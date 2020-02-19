@@ -1,53 +1,60 @@
 <body>
     <div>
-        <form class="form-inline" name="registrationForm">
+        <form class="form-horizontal" name="registrationForm" #formControl="ngForm">
             <p>Fill in the Student details </p>
             <div>
-                <span class="rollNo">Roll No :</span> &nbsp; <input style="width: 10%;" type="number" name="rollNo"
-                    ng-model="student.rollNo" ng-required="true">
-                <span class="error" ng-show="registrationForm.rollNo.$invalid">*
-                    <span ng-show="registrationForm.rollNo.$dirty && registrationForm.rollNo.$invalid">
-                        Roll no is required</span>
+                <span class="formInput">Roll No :</span> &nbsp; <input required type="number" name="rollNo"
+                    [(ngModel)]="rollNo" #rollNoControl="ngModel">
+                <span class="error" *ngIf="rollNoControl.invalid">*
+                    <span *ngIf="rollNoControl.dirty&&rollNoControl.invalid">
+                        Roll no is required</span></span>
             </div>
             <div>
-                <span class="name"></span> Name :</span> &nbsp; <input type="text" name="name" ng-model="student.name"
-                    ng-required="true">
-                <span class="error" ng-show="registrationForm.name.$invalid">*
-                    <span ng-show="registrationForm.name.$dirty && registrationForm.name.$invalid">Name is
+                <span class="formInput"> Name :</span> &nbsp; <input required type="text" name="name" [(ngModel)]="name"
+                    #nameControl="ngModel">
+                <span class="error" *ngIf="nameControl.invalid">*
+                    <span *ngIf="nameControl.dirty && nameControl.invalid">Name is
                         Required</span>
                 </span>
             </div>
             <div>
-                <span class="age"> Age :</span> &nbsp; <input style="width: 10%;" type="number" name="age"
-                    ng-model="student.age" ng-required="true">
-                <span class="error" ng-show="registrationForm.age.$invalid">*
-                    <span ng-show="registrationForm.age.$dirty && registrationForm.age.$invalid">Age is
+                <span class="formInput"> Age :</span> &nbsp; <input required type="number" name="age" [(ngModel)]="age"
+                    #ageControl="ngModel">
+                <span class="error" *ngIf="ageControl.invalid">*
+                    <span *ngIf="ageControl.dirty && ageControl.invalid">Age is
                         required</span>
                 </span>
             </div>
             <div>
-                E-mail ID : &nbsp; <input style="width: 30%;" type="text" name="email" ng-model="student.email">
+                <span class="formInput">Email-ID : &nbsp;</span> <input type="text" name="email" [(ngModel)]="email"
+                    #emailControl="ngModel">
 
             </div>
             <div>
-                <span class="date"> Date :</span> &nbsp;<input type="date" name="date" ng-model="newDate"
-                    ng-required="true">
-                <span class="error" ng-show="registrationForm.date.$invalid">*
-                    <span ng-show="registrationForm.date.$dirty && registrationForm.date.$invalid">Date is
+                <span class="formInput"> Date :</span> &nbsp;<input required type="date" name="date" [(ngModel)]="date"
+                    #dateControl="ngModel">
+                <span class="error" *ngIf="dateControl.invalid">*
+                    <span *ngIf="dateControl.dirty && dateControl.invalid">Date is
                         Required</span>
                 </span>
             </div>
             <div>
-                <span class="gender">Gender :</span> &nbsp; <input type="radio" name="isMale" ng-value="true"
-                    ng-model="student.isMale " ng-required="true">Male
-                <input type="radio" name="isMale" ng-value="false" ng-model="student.isMale" ng-required="true">Female
-                <span class="error" ng-show="registrationForm.isMale.$invalid">*
+                <span class="formInput">Gender :</span> &nbsp; <input type="radio" name="isMale" value="true"
+                    [(ngModel)]="isMale" #genderControl="ngModel" />Male
+                <input required type="radio" name="isMale" value="false" [(ngModel)]="isMale" />Female
+                <span class="error" *ngIf="genderControl.invalid">*
                 </span>
             </div>
 
-            <input style="margin-left: 2%;" type="reset" id="addButton" class="btn btn-success" value="Add"
-                ng-disabled="registrationForm.$invalid || loading" ng-click="addStudent()" />
-            <input type="button" id="cancelButton" class="btn btn-warning" value="Cancel" ng-click="redirect()">
+            <input type="reset" id="addButton" class="btn btn-success" value="Add" *ngIf="formControl.valid && !loading"
+                (click)="addStudent()" />
+            <input type="reset" id="cancelButton" class="btn btn-warning" value="Cancel" />
+
+            <div *ngIf="true" style="color: green;">{{successMessage}}</div>
+            <div *ngIf="operationFailed" class="error">{{errorMessage}}</div>
+            <div *ngIf="formControl.invalid" class="error">Please fill all the (*)marked fields to see the ADD
+                Button</div>
+
         </form>
     </div>
 </body>

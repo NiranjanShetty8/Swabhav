@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, observable } from 'rxjs';
 
 
 @Injectable({
@@ -20,26 +20,59 @@ export class StudentService {
         return new Observable<IStudent[]>((observer) => {
             this._http.get(this.studentsLink)
                 .subscribe((data: IStudent[]) => {
-                    // console.log("Inside Service", data);
                     observer.next(data);
                 }, (err) => {
-                    console.log('Error:', err);
-                    observer.error(`Something went wrong. ${err.statusText}`);
+                    observer.error(`*Check your Internet connection.* `);
                 });
         });
     }
 
-    addStudent(): Observable<any> {
+    addStudent(student: IStudent): Observable<any> {
         return new Observable<any>((observer) => {
-            this._http.post(this.studentsLink, this.student)
+            this._http.post(this.studentsLink, student)
                 .subscribe((data: any) => {
-                    console.log(data)
-                    this.student.id = data;
+                    observer.next(data)
+                    student.id = data;
                 }, (error) => {
-                    console.log(error)
+                    observer.error(error.message)
 
                 })
         });
+    }
+
+    getStudentById(id: string): Observable<any> {
+        return new Observable<any>((observer) => {
+            this._http.get(this.studentsLink + "/" + id)
+                .subscribe((data: IStudent) => {
+                    observer.next(data)
+                    this.student = data;
+                }, (error) => {
+                    observer.error(`${error.message}`);
+                })
+        })
+    }
+
+    editStudent(student: IStudent): Observable<any> {
+        return new Observable<any>((observer) => {
+            this._http.put(this.studentsLink, this.student)
+                .subscribe((data: any) => {
+                    observer.next(data)
+                }, (error) => {
+                    observer.error(`${error.message}`);
+                })
+
+        })
+    }
+
+    deleteStudent(id: string): Observable<any> {
+        return new Observable<any>((observer) => {
+            this._http.delete(this.studentsLink + "/" + id)
+                .subscribe((data: any) => {
+                    observer.next(data)
+                }, (error) => {
+                    observer.error(error.message);
+                })
+        })
     }
 
 }

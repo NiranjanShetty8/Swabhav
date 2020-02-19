@@ -5,30 +5,8 @@
 #deleteOperationResult{
   color: red;
 }
-  
-  #addMessage{
-    color: green;
-}
 
-.rollNo{
-  margin-left: 1.0%;
-}
 
-.name{
-  margin-left: 1.6%;
-}
-
-.age{
-  margin-left: 2.55%;
-}
-
-.date{
- margin-left: 2.35%;
-}
-
-.gender{
-  margin-left: 1.1%;
-}
 
 #count{
     color: darkred;
@@ -73,3 +51,30 @@ p {
     color: darkblue;
 }
  
+
+.spinner {
+  border : 16px solid silver;
+  border-top : 16px solid #337ab7;
+  border-radius: 50%;
+  width : 80px;
+  height : 80px;
+  animation: spin 700ms linear infinite;
+  top : 50%;
+  left: 50%;
+  position: absolute;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg)}
+  100% {transform:  rotate(360deg)}
+}
+
+.backDrop {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+}
