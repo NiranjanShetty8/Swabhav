@@ -28,11 +28,12 @@ export class StudentService {
     }
 
     addStudent(student: IStudent): Observable<any> {
+        console.log(student)
         return new Observable<any>((observer) => {
             this._http.post(this.studentsLink, student)
                 .subscribe((data: any) => {
                     observer.next(data)
-                    student.id = data;
+                    // student.id = data;
                 }, (error) => {
                     observer.error(error.message)
 
@@ -40,11 +41,11 @@ export class StudentService {
         });
     }
 
-    getStudentById(id: string): Observable<any> {
-        return new Observable<any>((observer) => {
+    getStudentById(id: string): Observable<IStudent> {
+        return new Observable<IStudent>((observer) => {
             this._http.get(this.studentsLink + "/" + id)
                 .subscribe((data: IStudent) => {
-                    observer.next(data)
+                    observer.next(data[0])
                     this.student = data;
                 }, (error) => {
                     observer.error(`${error.message}`);
@@ -52,9 +53,9 @@ export class StudentService {
         })
     }
 
-    editStudent(student: IStudent): Observable<any> {
+    editStudent(student: IStudent, id: string): Observable<any> {
         return new Observable<any>((observer) => {
-            this._http.put(this.studentsLink, this.student)
+            this._http.put(this.studentsLink + "/" + id, student)
                 .subscribe((data: any) => {
                     observer.next(data)
                 }, (error) => {

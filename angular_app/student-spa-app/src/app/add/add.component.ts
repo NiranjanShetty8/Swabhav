@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IStudent, StudentService } from '../StudentService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -19,7 +20,9 @@ export class AddComponent implements OnInit {
   errorMessage: string
   operationDone: boolean = false
   operationFailed: boolean = false
-  constructor(private _service: StudentService) { }
+  constructor(private _service: StudentService, private _router: Router) {
+
+  }
 
   addStudent() {
     this.loading = true
@@ -30,7 +33,9 @@ export class AddComponent implements OnInit {
     this._service.addStudent(this.student).subscribe((data: any) => {
       this.operationDone = true
       this.successMessage = "Student added with ID: " + data
-      this.loading = false
+      setTimeout(() => {
+        this._router.navigate([''])
+      }, 2000)
 
     }, (err) => {
       this.operationFailed = true;
@@ -41,12 +46,6 @@ export class AddComponent implements OnInit {
 
   ngOnInit() {
     this.loading = false;
-    console.log(this.rollNo)
-    // this.student = {
-    //   rollNo: this.student.rollNo, name: this.student.name, date: this.student.date, age: this.student.age,
-    //   email: this.student.email, isMale: this.student.isMale
-    // }
-
   }
 
 }

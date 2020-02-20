@@ -9,7 +9,7 @@ h1 {
     color: red;
 }
 
-.spinner {
+/* .spinner {
     border : 16px solid silver;
     border-top : 16px solid #337ab7;
     border-radius: 50%;
@@ -24,4 +24,4 @@ h1 {
 @keyframes spin {
     0% { transform: rotate(0deg)}
     100% {transform:  rotate(360deg)}
-}
+} */

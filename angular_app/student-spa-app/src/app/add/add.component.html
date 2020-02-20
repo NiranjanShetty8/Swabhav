@@ -48,7 +48,7 @@
 
             <input type="reset" id="addButton" class="btn btn-success" value="Add" *ngIf="formControl.valid && !loading"
                 (click)="addStudent()" />
-            <input type="reset" id="cancelButton" class="btn btn-warning" value="Cancel" />
+            <input type="reset" id="cancelButton" class="btn btn-warning" value="Clear" *ngIf="!loading" />
 
             <div *ngIf="true" style="color: green;">{{successMessage}}</div>
             <div *ngIf="operationFailed" class="error">{{errorMessage}}</div>

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IStudent, StudentService } from '../StudentService';
-import { Event, NavigationStart, NavigationEnd, Router, ActivatedRoute } from '@angular/router'
-import { Observable } from 'rxjs';
-import { EROFS } from 'constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,18 +15,7 @@ export class HomeComponent implements OnInit {
   count: number
   loading = true;
 
-  constructor(private _service: StudentService, private _route: ActivatedRoute) {
-    // this._router.events.subscribe((routerEvent: Event) => {
-    //   console.log("here")
-    //   if (routerEvent instanceof NavigationStart) {
-    //     console.log("in nav start")
-    //     this.loading = true;
-    //   }
-    //   if (routerEvent instanceof NavigationEnd) {
-    //     console.log("in nav end")
-    //     this.loading = false;
-    //   }
-    // })
+  constructor(private _service: StudentService, private _router: Router) {
   }
 
   deleteStudent(id: any) {
@@ -51,7 +38,6 @@ export class HomeComponent implements OnInit {
       this.count = this.allStudents.length
       this.loading = false
     }, (err) => {
-      console.log(err)
       this.errorMessage = err;
       this.loading = false
     });

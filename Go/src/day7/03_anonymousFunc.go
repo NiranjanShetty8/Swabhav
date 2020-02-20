@@ -48,15 +48,31 @@ func doProcessing(no int, callback func(string)) {
 	callback(fmt.Sprintf("Process things in function %d", no+no))
 }
 
+// func case5() {
+// 	var manyFunctions []func() int
+// 	for i := 1; i <= 5; i++ {
+// 		cleanI := i * 10
+// 		manyFunctions = append(manyFunctions, func(i int) func() int {
+// 			return func() int {
+// 				return cleanI
+// 			}
+// 		}(i))
+// 	}
+// 	fmt.Println(manyFunctions[0]())
+
+// 	for i := 0; i < 5; i++ {
+// 		fmt.Println(manyFunctions[i]())
+// 	}
+
+// }
+
 func case5() {
 	var manyFunctions []func() int
 	for i := 1; i <= 5; i++ {
 		cleanI := i * 10
-		manyFunctions = append(manyFunctions, func(i int) func() int {
-			return func() int {
-				return cleanI
-			}
-		}(i))
+		manyFunctions = append(manyFunctions, ...func(i int) int {
+			return cleanI;
+		})
 	}
 	fmt.Println(manyFunctions[0]())
 

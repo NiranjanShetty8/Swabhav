@@ -40,12 +40,13 @@ func case1() {
 
 func case2() {
 	slice := []int{10, 20}
+	fmt.Println(&slice[0])
 	slicePointer := slice
 	// Will change the address of Array
 	slice = append(slice, 30, 40, 50)
 	slice[0] = 0
-	fmt.Println(slice[0])
+	fmt.Println(&slice[0])
 
 	// still points to the previous address
-	fmt.Println(slicePointer[0])
+	fmt.Println(&slicePointer[0])
 }

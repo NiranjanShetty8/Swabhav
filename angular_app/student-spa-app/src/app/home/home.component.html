@@ -24,7 +24,8 @@
             <td>{{student.date}}</td>
             <td>{{student.isMale? "Male": "Female" }}</td>
             <!-- <td>{{loadedStudent.id}}</td> -->
-            <td><input id="editButton" type="button" value="Edit" class="btn btn-warning"></td>
+            <td><input id="editButton" type="button" routerLinkActive="active" [routerLink]="['/edit', student.id]"
+                    value=" Edit" class="btn btn-warning"></td>
             <td><input id="deleteButton" type="button" value="Delete" class="btn btn-danger"
                     (click)="deleteStudent(student.id)"></td>
 
