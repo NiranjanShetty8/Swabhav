@@ -1,59 +1,70 @@
 <body>
-    <div>
-        <form class="form-horizontal" name="registrationForm" #formControl="ngForm">
+    <div class="container">
+        <form class="was-validated" name="registrationForm" #formControl="ngForm">
             <p>Fill in the Student details </p>
             <div>
-                <span class="formInput">Roll No :</span> &nbsp; <input required type="number" name="rollNo"
-                    [(ngModel)]="rollNo" #rollNoControl="ngModel">
-                <span class="error" *ngIf="rollNoControl.invalid">*
-                    <span *ngIf="rollNoControl.dirty&&rollNoControl.invalid">
-                        Roll no is required</span></span>
-            </div>
-            <div>
-                <span class="formInput"> Name :</span> &nbsp; <input required type="text" name="name" [(ngModel)]="name"
-                    #nameControl="ngModel">
-                <span class="error" *ngIf="nameControl.invalid">*
-                    <span *ngIf="nameControl.dirty && nameControl.invalid">Name is
-                        Required</span>
-                </span>
-            </div>
-            <div>
-                <span class="formInput"> Age :</span> &nbsp; <input required type="number" name="age" [(ngModel)]="age"
-                    #ageControl="ngModel">
-                <span class="error" *ngIf="ageControl.invalid">*
-                    <span *ngIf="ageControl.dirty && ageControl.invalid">Age is
-                        required</span>
-                </span>
-            </div>
-            <div>
-                <span class="formInput">Email-ID : &nbsp;</span> <input type="text" name="email" [(ngModel)]="email"
-                    #emailControl="ngModel">
+                <div class="form-group">
+                    <label for="rollNo">Roll No </label> <span class="error" *ngIf="rollNoControl.invalid">*
+                        <span *ngIf="rollNoControl.dirty&&rollNoControl.invalid">
+                            Roll no is required</span></span>
+                    <input required class="form-control" type="number" name="rollNo" [(ngModel)]="rollNo"
+                        #rollNoControl="ngModel" style="width: 10%;">
 
-            </div>
-            <div>
-                <span class="formInput"> Date :</span> &nbsp;<input required type="date" name="date" [(ngModel)]="date"
-                    #dateControl="ngModel">
-                <span class="error" *ngIf="dateControl.invalid">*
-                    <span *ngIf="dateControl.dirty && dateControl.invalid">Date is
-                        Required</span>
-                </span>
-            </div>
-            <div>
-                <span class="formInput">Gender :</span> &nbsp; <input type="radio" name="isMale" value="true"
-                    [(ngModel)]="isMale" #genderControl="ngModel" />Male
-                <input required type="radio" name="isMale" value="false" [(ngModel)]="isMale" />Female
-                <span class="error" *ngIf="genderControl.invalid">*
-                </span>
-            </div>
+                </div>
+                <div class="form-group">
+                    <label class="formInput"> Name </label>
+                    <span class="error" *ngIf="nameControl.invalid">*
+                        <span *ngIf="nameControl.dirty && nameControl.invalid">Name is
+                            Required</span>
+                    </span>
+                    <input required class="form-control" type="text" name="name" [(ngModel)]="name"
+                        #nameControl="ngModel" style="width: 40%;">
+                </div>
+                <div class="form-group">
+                    <label class="formInput"> Age </label>
+                    <span class="error" *ngIf="ageControl.invalid">*
+                        <span *ngIf="ageControl.dirty && ageControl.invalid">Age is
+                            required</span>
+                    </span>
+                    <input required class="form-control" style="width: 10%;" type="number" name="age" [(ngModel)]="age"
+                        #ageControl="ngModel">
 
-            <input type="reset" id="addButton" class="btn btn-success" value="Add" *ngIf="formControl.valid && !loading"
-                (click)="addStudent()" />
-            <input type="reset" id="cancelButton" class="btn btn-warning" value="Clear" *ngIf="!loading" />
+                </div>
+                <div class="form-group">
+                    <label class="formInput">Email-ID </label> <input style="width: 50%;" class="form-control"
+                        type="text" name="email" [(ngModel)]="email" #emailControl="ngModel">
 
-            <div *ngIf="true" style="color: green;">{{successMessage}}</div>
-            <div *ngIf="operationFailed" class="error">{{errorMessage}}</div>
-            <div *ngIf="formControl.invalid" class="error">Please fill all the (*)marked fields to see the ADD
-                Button</div>
+                </div>
+                <div class="form-group">
+                    <label class="formInput"> Date </label>
+                    <span class="error" *ngIf="dateControl.invalid">*
+                        <span *ngIf="dateControl.dirty && dateControl.invalid">Date is
+                            Required</span>
+                    </span>
+                    <input required class="form-control" type="date" name="date" [(ngModel)]="date"
+                        #dateControl="ngModel" style="width: 13%;">
+
+                </div>
+                <div class="form-group">
+                    <label class="formInput">Gender</label>
+                    <span class="error" *ngIf="genderControl.invalid">*
+                    </span><br />
+                    <input class="form-check-input" type="radio" name="isMale" value="true" [(ngModel)]="isMale"
+                        #genderControl="ngModel" />Male
+                    <input required class="form-check-input" type="radio" name="isMale" value="false"
+                        [(ngModel)]="isMale" />Female
+
+                </div>
+
+                <input type="reset" id="addButton" class="btn btn-success" value="Add"
+                    *ngIf="formControl.valid && !loading" (click)="addStudent()" />
+                <input type="reset" id="cancelButton" class="btn btn-warning" value="Clear" *ngIf="!loading" />
+
+                <div *ngIf="true" style="color: green;">{{successMessage}}</div>
+                <div *ngIf="operationFailed" class="error">{{errorMessage}}</div>
+                <div *ngIf="formControl.invalid" class="error">Please fill all the (*) marked fields to see the ADD
+                    Button</div>
+            </div>
 
         </form>
     </div>
