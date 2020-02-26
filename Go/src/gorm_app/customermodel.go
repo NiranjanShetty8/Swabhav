@@ -26,9 +26,9 @@ func main() {
 
 }
 
-type Customer struct {
-	ID        int
-	Firstname string `gorm:"type:varchar(100);"`
-	LastName  string
-	Balance   float64
-}
+// type Customer struct {
+// 	ID        int
+// 	Firstname string `gorm:"type:varchar(100);"`
+// 	LastName  string
+// 	Balance   float64
+// }

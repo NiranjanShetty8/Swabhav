@@ -57,11 +57,13 @@ func main() {
 	db.Find(&customerBucket)
 	fmt.Println(customerBucket)
 
+	db.Delete(&lastCustomer)
+
 }
 
-type Customer struct {
-	ID        int
-	Firstname string `gorm:"type:varchar(100);"`
-	LastName  string `gorm:"type:varchar(100);"`
-	Balance   float64
-}
+// type Customer struct {
+// 	ID        int
+// 	Firstname string `gorm:"type:varchar(100);"`
+// 	LastName  string `gorm:"type:varchar(100);"`
+// 	Balance   float64
+// }

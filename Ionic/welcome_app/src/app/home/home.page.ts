@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { stringify } from 'querystring';
+import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts'
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +15,17 @@ export class HomePage {
   buttonStatus: boolean = true
   result: number
 
+
+  constructor(private plt: Platform, private contacts: Contacts) {
+    this.result = 0;
+    this.plt.ready().then((readySource: any) => {
+      console.log('Platform ready from', readySource)
+      // this.displayAllContacts();
+    }, (err) => {
+      console.log(err)
+    })
+  }
+
   nameChanged() {
     if (this.data1 && this.data2) {
       this.buttonStatus = false
@@ -20,6 +33,17 @@ export class HomePage {
       this.result = 0;
       this.buttonStatus = true;
     }
+  }
+
+  displayAllContacts() {
+    // alert("Hello")
+    this.contacts.pickContact()
+      .then((response: Contact) => {
+        console.log(response)
+      }, (err) => {
+        console.log(err)
+      });
+
   }
 
   restartApp() {
@@ -41,8 +65,6 @@ export class HomePage {
     this.result = (sum1 + sum2) % 101;
   }
 
-  constructor() {
-    this.result = 0;
-  }
+
 
 }
