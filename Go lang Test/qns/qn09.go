@@ -27,9 +27,7 @@ func (r Refrigerator) FindFood(food string) (Food, error) {
 // will actually be quite small! Note: it wouldn't be appropriate
 // to use either "panic" or "recover" in this exercise; we won't
 // be using either one.
-
 func Eat(fridge Refrigerator) error {
-
 	defer fridge.Close()
 	fridge.Open()
 	food, err := fridge.FindFood("bananas")

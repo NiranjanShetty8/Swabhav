@@ -18,18 +18,19 @@ func main() {
 	// number to the variable number1, and any error value
 	// to the variable err. Use the integer 64 for
 	// ParseFloat's bitSize argument.
+
 	number1, err := strconv.ParseFloat(string1, 64)
 
 	if err != nil {
 		log.Fatal("Could not parse string")
 	}
 
+	number2, err := strconv.ParseFloat(string2, 64)
 	// YOUR CODE HERE:
 	// Use ParseFloat to convert string2 to a float64
 	// value. Assign the converted number to the variable
 	// number2, and any error value to the variable err.
 
-	number2, err := strconv.ParseFloat(string2, 64)
 	if err != nil {
 		log.Fatal("Could not parse string")
 	}

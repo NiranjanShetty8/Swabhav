@@ -18,13 +18,11 @@ import (
 
 // repeat prints a string multiple times, then writes "true" to the
 // provided channel to signal it's done.
-func repeat(s string, channel chan<- bool) {
+func repeat(s string, channel chan bool) {
 	for i := 0; i < 30; i++ {
 		fmt.Print(s)
 	}
 	channel <- true
-	//This function cannot read the channel
-	// fmt.Println(<-channel)
 }
 
 func main() {

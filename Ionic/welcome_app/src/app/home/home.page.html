@@ -1,10 +1,12 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="warning">
     <ion-title color="primary">
-      Welcome-APP
+      Name Matcher
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-card></ion-card>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -13,10 +15,35 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <ion-text color="danger">My First APP</ion-text>
-    <p style="color: purple;">Check out our api: &nbsp;<a target="_blank"
-        href="http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students">
-        Student API</a></p>
+  <div>
+    <ion-item>
+      <ion-label color="dark" style="font-size: x-large;">Name1:</ion-label>
+      <ion-textarea style="font-size: x-large;" [(ngModel)]="data1" (ionChange)="nameChanged()"
+        placeholder="Enter the first name">
+      </ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark" style="font-size: x-large;">Name2:</ion-label>
+      <ion-textarea style="font-size: x-large;" [(ngModel)]="data2" (ionChange)="nameChanged()"
+        placeholder="Enter the second name"></ion-textarea>
+    </ion-item>
+    <div class="labels">
+      <ion-item>
+        <ion-label class="test">{{data1}}</ion-label>
+      </ion-item>
+    </div>
+    <div class="labels">
+      <ion-icon class="heart" name="heart"></ion-icon>
+      <ion-item>
+        <ion-label class="test">{{data2}}</ion-label>
+      </ion-item>
+    </div>
+  </div>
+  <div>
+    <ion-button id="resultButton" color="warning" (click)="showResult()" disabled={{buttonStatus}}>{{result}}%
+    </ion-button>
+  </div>
+  <div>
+    <ion-button id="resetButton" color="danger" (click)="restartApp()">Clear</ion-button>
   </div>
 </ion-content>

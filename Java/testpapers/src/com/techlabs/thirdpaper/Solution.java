@@ -1,36 +1,33 @@
 package com.techlabs.thirdpaper;
 
 class Solution {
-    public int maxArea(int[] height) {
-        int maxArea =0;
-        int tempArea;
-        for(int index = 0; index<height.length ; index++) {
-                for(int j =index+1; j<height.length; j++){
-                    if(height[index]>height[j]){
-                          tempArea = calcArea(height[j], height[j-index]);
-                    } else {
-                          tempArea = calcArea(height[index], height[j-index]);
-                     }
-                if(tempArea > maxArea) {
-                    maxArea = tempArea;
-                }
-            }
-                
-        }
-        return maxArea;
+	public boolean isNumber(String s) {
+		  if(s == "1 "){
+              return true;
+          }
+        char[] example = s.toCharArray();
+          
+                if(!Character.isDigit(example[0])) {
+                    return false;
+                } 
+        for(int index=0;index<example.length;index++) {
+        	int comp = example[index];
+            if(Character.isDigit(example[index]) 
+            		|| comp =='e'||comp == 43||comp ==45||comp ==46) {
+                if(index == example.length-1){
+                    return true;
+                         } 
+                continue;
+                  }
+            return false;
+             }
+        
+        
+           return false;
     }
-    
-    public int calcArea(int no1,int no2) {
-        return no1*no2;
-    }
-    
-    public static void main(String args[]) {
-    	int[] arr = {1,1,3,4};
-    	Solution s = new Solution();
-    	System.out.println(s.maxArea(arr));
-    	int[] arr2 =  {1,8,6,2,5,4,8,3,7};
-    	System.out.println(s.maxArea(arr2));
-    	
-    }
-}
 
+	public static void main(String args[]) {
+		Solution s = new Solution();
+		System.out.println(s.isNumber("1 "));
+	}
+}

@@ -11,12 +11,9 @@ import "fmt"
 // the pointer to its opposite. Once this change
 // is made, the function doesn't need to return
 // anything.
-// func negate(myBoolean bool) bool {
-// 	return !myBoolean
-// }
-
-func negate(myBoolean *bool) {
+func negate(myBoolean *bool) bool {
 	*myBoolean = !*myBoolean
+	return *myBoolean
 }
 
 func main() {

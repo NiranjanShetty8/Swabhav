@@ -2,9 +2,7 @@
 // compiles, runs, and prints the message "Hello, Swabhav Techlabs!".
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 	myString := "Hello, Swabhav Techlabs!"

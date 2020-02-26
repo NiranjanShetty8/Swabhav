@@ -19,11 +19,11 @@ func main() {
 	// Make a map with ints as keys and strings as values. The 1 key
 	// should have the value "H", 2 should have the value "He", and
 	// 3 should have the value "Li".
-	elements := make(map[int]string)
-	elements[1] = "H"
-	elements[2] = "He"
-	elements[3] = "Li"
-
+	elements := map[int]string{
+		1: "H",
+		2: "He",
+		3: "Li",
+	}
 	// Print all the keys and corresponding values in the slice.
 	// Order doesn't matter.
 	for atomicNumber, symbol := range elements {
