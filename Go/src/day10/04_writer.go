@@ -16,7 +16,7 @@ type Page struct {
 	content string
 }
 
-func savePage(url, file string, out chan *Page) {
+func savePage(url, file string, out chan<- *Page) {
 	res, err := http.Get(url)
 	if err != nil {
 		out <- nil

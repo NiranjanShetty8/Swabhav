@@ -16,14 +16,14 @@ export class HomePage {
   result: number
 
 
-  constructor(private plt: Platform, private contacts: Contacts) {
-    this.result = 0;
-    this.plt.ready().then((readySource: any) => {
-      console.log('Platform ready from', readySource)
-      // this.displayAllContacts();
-    }, (err) => {
-      console.log(err)
-    })
+  constructor(private contacts: Contacts) {
+    // this.result = 0;
+    // this.plt.ready().then((readySource: any) => {
+    //   console.log('Platform ready from', readySource)
+    //   // this.displayAllContacts();
+    // }, (err) => {
+    //   console.log(err)
+    // })
   }
 
   nameChanged() {
@@ -35,18 +35,20 @@ export class HomePage {
     }
   }
 
-  displayAllContacts() {
-    // alert("Hello")
-    this.contacts.pickContact()
-      .then((response: Contact) => {
-        console.log(response)
-      }, (err) => {
-        console.log(err)
-      });
+  // displayAllContacts(functionNo: number) {
+  //   // alert("Hello")
+  //   this.contacts.pickContact()
+  //     .then((response: Contact) => {
+  //       console.log(response)
+  //     }, (err) => {
+  //       console.log(err)
+  //     });
 
-  }
+  // }
 
-  restartApp() {
+
+
+  clearNames() {
     this.buttonStatus = true;
     this.data1 = ""
     this.data2 = ""
@@ -64,7 +66,5 @@ export class HomePage {
     }
     this.result = (sum1 + sum2) % 101;
   }
-
-
 
 }

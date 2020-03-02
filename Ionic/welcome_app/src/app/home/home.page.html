@@ -21,7 +21,7 @@
       <ion-textarea style="font-size: x-large;" [(ngModel)]="data1" (ionChange)="nameChanged()"
         placeholder="Enter the first name">
       </ion-textarea>
-      <button class="iconButton" (click)="displayAllContacts()">
+      <button class="iconButton" (click)="displayAllContacts(1)">
         <ion-icon class="phonebook" name="book-outline"></ion-icon>
       </button>
     </ion-item>
@@ -29,7 +29,7 @@
       <ion-label color="dark" style="font-size: x-large;">Name2:</ion-label>
       <ion-textarea style="font-size: x-large;" [(ngModel)]="data2" (ionChange)="nameChanged()"
         placeholder="Enter the second name"></ion-textarea>
-      <button class="iconButton" (click)="displayAllContacts()">
+      <button class="iconButton" (click)="displayAllContacts(2)">
         <ion-icon class="phonebook" name="book-outline"></ion-icon>
       </button>
     </ion-item>
@@ -50,6 +50,6 @@
     </ion-button>
   </div>
   <div>
-    <ion-button id="resetButton" color="danger" (click)="restartApp()">Clear</ion-button>
+    <ion-button id="resetButton" color="danger" (click)="clearNames()">Clear</ion-button>
   </div>
 </ion-content>

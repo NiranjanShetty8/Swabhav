@@ -30,12 +30,10 @@ public class ResultAnalyzer {
 				checkForwardDiagonal(mark, index) || 
 				checkReverseDiagonal(mark, index);
 		if(resultCheck) {
-			result = Result.WIN;
-			return result;
+			return Result.WIN;
 		}
 		else if(b.checkIfBoardIsFull()) {
-			result = Result.DRAW;
-			return result;
+			return Result.DRAW;
 		}
 		return result;
 	}
