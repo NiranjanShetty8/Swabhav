@@ -12,36 +12,31 @@ func getGreetings() string {
 	t := time.Now()
 	h, _, _ := t.Clock()
 	// fmt.Println(h)
-	if h < 6 {
-		return "Good night"
-	}
-	if h < 12 {
+	if h < 6 && h > 21 {
+		return "Good Night"
+	} else if h < 12 {
 		return "Good Morning"
-	}
-	if h < 18 {
+	} else if h < 18 {
 		return "Good Afternoon"
-	}
-	if h < 22 {
+	} else {
 		return "Good Evening"
 	}
-	return "Good Night"
 }
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("index of mux app"))
 }
+func WelcomeMsgHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte(fmt.Sprintf("Welcome, to mux app: %s", getGreetings())))
+}
 func WelecomeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(fmt.Sprintf("Welcome %s, %s",
 		r.URL.Query()["user"][0], getGreetings())))
-}
-func WelcomeMsgHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte(fmt.Sprintf("Welcome, to mux app: %s", getGreetings())))
 }
 
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", IndexHandler)
-	// r.HandleFunc("/welcome", WelecomeHandler)
 	r.Path("/welcome").Queries("user", "{user}").HandlerFunc(WelecomeHandler)
 	r.HandleFunc("/welcome", WelcomeMsgHandler)
 
