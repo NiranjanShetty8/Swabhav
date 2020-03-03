@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/NiranjanShetty8/Swabhav/tree/master/gomod_app/model"
+	//go mod init
 )
 
 type DataService struct {

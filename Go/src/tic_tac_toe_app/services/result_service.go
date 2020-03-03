@@ -1,28 +1,76 @@
 package service
 
+import "math"
+
 type ResultService struct {
-	BoardService BoardService
+	BoardService *BoardService
 }
+
+//Try to make limit global
 
 func NewResultService(boardService *BoardService) *ResultService {
 	return &ResultService{
-		BoardService: *boardService,
+		BoardService: boardService,
 	}
 }
-func (rService *ResultService) CheckForwardDiagonal() {
 
+func (rs *ResultService) checkForwardDiagonal(mark string, index uint8) bool {
+	var firstIndex uint8 = 0
+	root := float64(rs.BoardService.Board.Size)
+	limit := uint8(math.Sqrt(root))
+	cellArr := rs.BoardService.Board.Cells
+	size := len(cellArr)
+	if index%limit == index/limit {
+		for i := firstIndex; i < uint8(size); i = i + limit + 1 {
+			if cellArr[i].GetMark() != mark {
+				return false
+			}
+		}
+		return true
+	}
+	return false
 }
 
-// public boolean checkForwardDiagonal(Mark mark, int index) {
-// 	int firstIndex = 0;
-// 	int limit = (int) Math.sqrt(cellList.size());
-// 	if (index % limit == index / limit) {
-// 		for (int i = firstIndex; i < cellList.size(); i = i + limit + 1) {
-// 			if (cellList.get(i).getMark() != mark) {
-// 				return false;
-// 			}
-// 		}
-// 		return true;
-// 	}
-// 	return false;
-// }
+func (rs *ResultService) checkReverseDiagonal(mark string, index uint8) bool {
+	root := float64(rs.BoardService.Board.Size)
+	limit := uint8(math.Sqrt(root))
+	firstIndex := limit - 1
+	cellArr := rs.BoardService.Board.Cells
+	size := len(cellArr)
+	if (index%limit)+(index/limit) == firstIndex {
+		for i := firstIndex; i < uint8(size-1); i = i + firstIndex {
+			if cellArr[i].GetMark() != mark {
+				return false
+			}
+		}
+		return true
+	}
+	return false
+}
+func (rs *ResultService) checkRow(mark string, index uint8) bool {
+	cellArr := rs.BoardService.Board.Cells
+	root := float64(rs.BoardService.Board.Size)
+	limit := uint8(math.Sqrt(root))
+	row := index / limit
+	firstIndex := row * limit
+	for i := firstIndex; i < firstIndex+limit; i++ {
+		if cellArr[i].GetMark() != mark {
+			return false
+		}
+	}
+	return true
+}
+
+func (rs *ResultService) checkColumn(mark string, index uint8) bool {
+	cellArr := rs.BoardService.Board.Cells
+	root := float64(rs.BoardService.Board.Size)
+	limit := uint8(math.Sqrt(root))
+	size := uint8(len(cellArr))
+	firstColumn := index % limit
+	for i := firstColumn; i < size; i = i + limit {
+		if cellArr[i].GetMark() != mark {
+			return false
+		}
+	}
+	return true
+}
