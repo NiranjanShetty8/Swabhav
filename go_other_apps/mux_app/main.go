@@ -29,7 +29,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 func WelcomeMsgHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(fmt.Sprintf("Welcome, to mux app: %s", getGreetings())))
 }
-func WelecomeHandler(w http.ResponseWriter, r *http.Request) {
+func WelcomeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(fmt.Sprintf("Welcome %s, %s",
 		r.URL.Query()["user"][0], getGreetings())))
 }
@@ -37,7 +37,7 @@ func WelecomeHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", IndexHandler)
-	r.Path("/welcome").Queries("user", "{user}").HandlerFunc(WelecomeHandler)
+	r.Path("/welcome").Queries("user", "{user}").HandlerFunc(WelcomeHandler)
 	r.HandleFunc("/welcome", WelcomeMsgHandler)
 
 	server := &http.Server{

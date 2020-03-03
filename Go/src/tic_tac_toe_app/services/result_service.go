@@ -14,6 +14,25 @@ func NewResultService(boardService *BoardService) *ResultService {
 	}
 }
 
+func (rs *ResultService) checkResult {
+	
+}
+
+public Result giveResult(Board b,Mark mark,int index) {
+	Result result = Result.PROCESS;
+	boolean resultCheck = checkRow(mark, index)|| 
+			checkColumn(mark, index) ||
+			checkForwardDiagonal(mark, index) || 
+			checkReverseDiagonal(mark, index);
+	if(resultCheck) {
+		return Result.WIN;
+	}
+	else if(b.checkIfBoardIsFull()) {
+		return Result.DRAW;
+	}
+	return result;
+}
+
 func (rs *ResultService) checkForwardDiagonal(mark string, index uint8) bool {
 	var firstIndex uint8 = 0
 	root := float64(rs.BoardService.Board.Size)
