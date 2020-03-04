@@ -16,11 +16,12 @@ var service = NewStudentService()
 
 func RegisterRoutes(route *mux.Router) {
 
-	route.HandleFunc("/", GetAllStudents).Methods("GET")
-	route.HandleFunc("/", AddStudent).Methods("POST")
-	route.HandleFunc("/{ID}", GetStudentByID).Methods("GET")
-	route.HandleFunc("/{ID}", DeleteStudent).Methods("DELETE")
-	route.HandleFunc("/{ID}", UpdateStudent).Methods("PUT")
+	route.HandleFunc("/api/techlabs/students", GetAllStudents).Methods("GET")
+	route.HandleFunc("/api/techlabs/students/", GetAllStudents).Methods("GET")
+	route.HandleFunc("/api/techlabs/students/", AddStudent).Methods("POST")
+	route.HandleFunc("/api/techlabs/students/{ID}", GetStudentByID).Methods("GET")
+	route.HandleFunc("/api/techlabs/students/{ID}", DeleteStudent).Methods("DELETE")
+	route.HandleFunc("/api/techlabs/students/{ID}", UpdateStudent).Methods("PUT")
 
 }
 
@@ -53,6 +54,8 @@ func DeleteStudent(w http.ResponseWriter, http *http.Request) {
 }
 
 func UpdateStudent(w http.ResponseWriter, http *http.Request) {
+	fmt.Println("Update Student")
+	w.Header().Set("Content-Type", "application/json")
 	id := mux.Vars(http)
 	newID, _ := uuid.FromString(id["ID"])
 	student := &Student{}
@@ -75,8 +78,10 @@ func AddStudent(w http.ResponseWriter, http *http.Request) {
 	// w.Header().Set("Content-Type", "application/json")
 	student := &Student{}
 	if strings.Compare(http.Header["Content-Type"][0], "application/x-www-form-urlencoded") == 0 {
+		fmt.Println("URL ENCODED")
 		urlEncodedData(student, http)
 	} else {
+		fmt.Println("JSON")
 		addErr := json.NewDecoder(http.Body).Decode(student)
 		if addErr != nil {
 			return

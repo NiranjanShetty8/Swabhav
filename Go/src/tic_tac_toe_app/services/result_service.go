@@ -3,34 +3,41 @@ package service
 import "math"
 
 type ResultService struct {
+	Result       *Result
 	BoardService *BoardService
+}
+
+type Result struct {
+	Win  bool
+	Draw bool
 }
 
 //Try to make limit global
 
-func NewResultService(boardService *BoardService) *ResultService {
+func NewResultService(boardService *BoardService, result *Result) *ResultService {
 	return &ResultService{
+		Result:       result,
 		BoardService: boardService,
 	}
 }
 
-func (rs *ResultService) checkResult {
-	
-}
+func (rs *ResultService) GetResult(mark string, index uint8) *Result {
+	rs.Result.Draw = false
+	rs.Result.Win = rs.checkRow(mark, index) ||
+		rs.checkColumn(mark, index) ||
+		rs.checkForwardDiagonal(mark, index) ||
+		rs.checkReverseDiagonal(mark, index)
 
-public Result giveResult(Board b,Mark mark,int index) {
-	Result result = Result.PROCESS;
-	boolean resultCheck = checkRow(mark, index)|| 
-			checkColumn(mark, index) ||
-			checkForwardDiagonal(mark, index) || 
-			checkReverseDiagonal(mark, index);
-	if(resultCheck) {
-		return Result.WIN;
+	if rs.Result.Win {
+		return rs.Result
 	}
-	else if(b.checkIfBoardIsFull()) {
-		return Result.DRAW;
+
+	if rs.BoardService.CheckIfBoardIsFull() {
+		rs.Result.Draw = true
 	}
-	return result;
+
+	return rs.Result
+
 }
 
 func (rs *ResultService) checkForwardDiagonal(mark string, index uint8) bool {

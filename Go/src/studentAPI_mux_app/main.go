@@ -10,6 +10,7 @@ import (
 	"studentAPI_mux_app/controller"
 	"time"
 
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	// logger "github.com/sirupsen/logrus"
 )
@@ -21,8 +22,12 @@ func main() {
 	}
 	fmt.Println("Router Created")
 	controller.RegisterRoutes(route)
+	headers := handlers.AllowedHeaders([]string{"Content-Type"})
+	methods := handlers.AllowedMethods([]string{"POST", "PUT", "GET", "DELETE"})
+	origin := handlers.AllowedOrigins([]string{"*"})
 	srv := &http.Server{
-		Handler:      route,
+		Handler: handlers.CORS(headers, methods, origin)(route),
+		// Handler:      route,
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 		Addr:         "127.0.0.1:8080",

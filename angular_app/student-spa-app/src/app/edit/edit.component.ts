@@ -51,7 +51,9 @@ export class EditComponent implements OnInit {
   ngOnInit() {
     this.loading = true
     this._service.getStudentById(this.id)
-      .subscribe((data: IStudent) => {
+      .subscribe((data: any) => {
+        console.log(data)
+        console.log(typeof (data))
         this.rollNo = data.rollNo;
         this.name = data.name;
         this.age = data.age;

@@ -10,10 +10,10 @@ import { Observable, observable } from 'rxjs';
 export class StudentService {
     student: IStudent;
     allStudents: IStudent[];
-    studentsLink = "http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students"
+    // studentsLink = "http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students"
+    studentsLink = 'http://127.0.0.1:8080/api/techlabs/students'
 
     constructor(private _http: HttpClient) {
-
 
     }
     getAllStudents(): Observable<IStudent[]> {
@@ -45,6 +45,8 @@ export class StudentService {
         return new Observable<IStudent>((observer) => {
             this._http.get(this.studentsLink + "/" + id)
                 .subscribe((data: IStudent) => {
+                    console.log(typeof (data))
+                    console.log(data)
                     observer.next(data[0])
                     this.student = data;
                 }, (error) => {

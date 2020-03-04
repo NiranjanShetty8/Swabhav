@@ -1,4 +1,4 @@
-package main 
+package main
 
 import (
 	"context"
@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"os/signal"
 	"time"
 
 	"github.com/NiranjanShetty8/Swabhav/tree/master/go_other_apps/student_api_mux/controller"
@@ -13,7 +14,8 @@ import (
 	// logger "github.com/sirupsen/logrus"
 )
 
-func main()  {
+//Major changes needed
+func main() {
 	route := mux.NewRouter()
 	if route == nil {
 		log.Fatal("No router Created")
@@ -21,10 +23,10 @@ func main()  {
 	log.Info("Router Created")
 	controller.RegisterRoutes(route)
 	server := &http.Server{
-		Handler: route,
+		Handler:      route,
 		WriteTimeout: 15 * time.Second,
-		ReadTimeout: 15 * time.Second,
-		Addr: "127.0.0.1:8080",
+		ReadTimeout:  15 * time.Second,
+		Addr:         "127.0.0.1:8080",
 	}
 	var wait time.Duration
 

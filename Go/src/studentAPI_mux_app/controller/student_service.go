@@ -57,12 +57,14 @@ func (ss *StudentService) GetAllStudents() *[]Student {
 	return &students
 }
 
-func (ss *StudentService) GetStudentByID(id uuid.UUID) (*Student, error) {
+func (ss *StudentService) GetStudentByID(id uuid.UUID) ([]*Student, error) {
 	if allStudents[id].Name == "" {
 		return nil, errors.New("Student does not exist")
 	}
-	student := allStudents[id]
-	return &student, nil
+	var student []*Student
+	stud := allStudents[id]
+	student = append(student, &stud)
+	return student, nil
 }
 
 func (ss *StudentService) DeleteStudent(id uuid.UUID) error {
