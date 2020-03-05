@@ -1,0 +1,26 @@
+#Start from go lang version
+FROM golang:1.13.7
+
+#add maintainer info
+LABEL maintainer="Niranjan Shetty<shetty.niranjan4@gmail.com"
+
+#set Current Working directory inside the container
+WORKDIR /build
+ENV GO111MODULE=on
+# RUN mkdir /build
+
+COPY go.mod .
+COPY go.sum .
+RUN go mod download
+
+#Copy the source from the current directory to the working directory
+COPY . .
+
+#Build the Go app
+RUN go build -o main .
+
+#Expose port 8080 to the outside world
+EXPOSE 8080
+
+#command to run executable
+CMD ["/build/main"]

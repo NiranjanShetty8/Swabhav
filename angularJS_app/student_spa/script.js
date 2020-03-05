@@ -1,4 +1,5 @@
-
+// var apiLink = "http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students/";
+var apiLink = "http://127.0.0.1:8080/api/techlabs/students/";
 angular.module('StudentSPA', ['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
@@ -33,7 +34,7 @@ angular.module('StudentSPA', ['ngRoute'])
                 return $q(function (resolve, reject) {
                     $http({
                         method: 'GET',
-                        url: "http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students"
+                        url: apiLink
                     }).then(function success(response) {
                         resolve(response.data);
                     }).catch(function error(err) {
@@ -45,7 +46,7 @@ angular.module('StudentSPA', ['ngRoute'])
                 return $q(function (resolve, reject) {
                     $http({
                         method: 'POST',
-                        url: "http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students",
+                        url: apiLink,
                         data: student
                     }).then(function success(response) {
                         resolve(response.data);
@@ -58,7 +59,7 @@ angular.module('StudentSPA', ['ngRoute'])
                 return $q(function (resolve, reject) {
                     $http({
                         method: "PUT",
-                        url: "http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students/" + student.id,
+                        url: apiLink + student.id,
                         data: student
                     }).then(function success(response) {
                         resolve(response);
@@ -71,7 +72,7 @@ angular.module('StudentSPA', ['ngRoute'])
                 return $q(function (resolve, reject) {
                     $http({
                         method: 'GET',
-                        url: "http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students/" + $routeParams.id,
+                        url: apiLink + $routeParams.id,
                     }).then(function success(response) {
                         resolve(response.data);
                     }).catch(function error(err) {
@@ -101,7 +102,7 @@ angular.module('StudentSPA', ['ngRoute'])
                     return $q(function (resolve, reject) {
                         $http({
                             method: 'DELETE',
-                            url: "http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students/" + student.id,
+                            url: apiLink + student.id,
                         }).then(function success(response) {
                             resolve(response);
                             $scope.deleted = "*Student with " + student.id + " has been deleted*"
