@@ -23,15 +23,14 @@ func (r Robot) Walk() {
 	fmt.Println("Powering legs")
 }
 
-type NoiseMaker interface {
-	MakeSound()
-}
-
 // YOUR CODE HERE:
 // Define a NoiseMaker interface type, which the above
 // Whistle, Horn, and Robot types will all satisfy.
 // It should require one method, MakeSound, which has
 // no parameters and no return values.
+type NoiseMaker interface {
+	MakeSound()
+}
 
 // YOUR CODE HERE:
 // Define a Play function that accepts a parameter with
@@ -39,6 +38,7 @@ type NoiseMaker interface {
 // on the parameter it receives.
 func Play(noise NoiseMaker) {
 	noise.MakeSound()
+
 }
 
 func main() {

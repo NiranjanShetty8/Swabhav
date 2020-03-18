@@ -5,6 +5,7 @@ import "fmt"
 // YOUR CODE HERE:
 // Define a Rectangle struct type with Length and Width
 // fields, each of which has a type of float64.
+
 type Rectangle struct {
 	Length float64
 	Width  float64
@@ -24,8 +25,9 @@ func (r *Rectangle) Area() float64 {
 // accept no parameters. It should return a float64 value
 // representing the receiver's perimeter (2 times its Length
 // plus 2 times its Width).
+
 func (r *Rectangle) Perimeter() float64 {
-	return r.Length*2 + r.Width*2
+	return 2*r.Length + 2*r.Width
 }
 
 func main() {

@@ -115,8 +115,8 @@ angular.module('StudentSPA', ['ngRoute'])
                 }
             }
         }])
-    .controller('AddingStudentController', ['$scope', 'studentService', '$route', "$window",
-        function ($scope, studentService, $route, $window) {
+    .controller('AddingStudentController', ['$scope', '$timeout', 'studentService', '$route', "$window",
+        function ($scope, $timeout, studentService, $route, $window) {
             $scope.loading = false;
             $scope.redirect = studentService.redirectToHome;
             $scope.addStudent = function () {
@@ -128,10 +128,11 @@ angular.module('StudentSPA', ['ngRoute'])
                 $scope.loading = true;
                 studentService.add($scope.student)
                     .then(function (response) {
-                        $scope.loading = false;
+                        $scope.loading = false
                         $scope.student.id = response;
                         $scope.addedMessage = "Student added successfully with id: " + response;
-                        $scope.redirect();
+                        // $timeout(function () { $scope.disableLoading(); }, 1000);
+                        $timeout($scope.redirect, 2000);
 
                     })
                     .catch(function (err) {

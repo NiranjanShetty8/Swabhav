@@ -5,16 +5,16 @@ import (
 )
 
 type Subscriber struct {
+	Address
 	Name   string
 	Rate   float64
 	Active bool
-	Address
 }
 
 type Employee struct {
+	Address
 	Name   string
 	Salary float64
-	Address
 }
 
 // YOUR CODE HERE:
