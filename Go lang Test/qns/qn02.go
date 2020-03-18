@@ -18,16 +18,15 @@ import (
 // function to generate an error value. You'll also need
 // to update the code in "main" to handle the error value.
 
-func main() {
-	quotient, err := divide(5.6, 0)
-	fmt.Printf("%0.2f\n", quotient) // => 2.80
-	fmt.Print(err)
+func divide(num, den float64) (float64, error) {
+	if den == 0 {
+		return 0, fmt.Errorf("Can't divide by zero.")
+	}
+	result := num / den
+	return result, nil
 }
 
-func divide(numerator, denominator float64) (float64, error) {
-	if denominator == 0 {
-		return 0, fmt.Errorf("Can't divide by 0")
-	}
-	result := numerator / denominator
-	return result, nil
+func main() {
+	quotient, err := divide(5.6, 0)
+	fmt.Printf("%0.2f\n %v", quotient, err) // => 2.80
 }

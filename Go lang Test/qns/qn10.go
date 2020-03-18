@@ -18,7 +18,7 @@ import (
 
 // repeat prints a string multiple times, then writes "true" to the
 // provided channel to signal it's done.
-func repeat(s string, channel chan bool) {
+func repeat(s string, channel chan<- bool) {
 	for i := 0; i < 30; i++ {
 		fmt.Print(s)
 	}
@@ -31,4 +31,5 @@ func main() {
 	go repeat("y", channel)
 	<-channel
 	<-channel
+
 }

@@ -18,9 +18,11 @@ func main() {
 	if dbErr != nil {
 		fmt.Print(dbErr)
 	}
-	showBookmarkMenu()
 	showUserMenu()
+	showBookmarkMenu()
 }
+
+func show
 
 func showUserMenu() {
 	userService := uservice.NewUserService(db)

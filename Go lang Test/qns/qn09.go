@@ -28,8 +28,8 @@ func (r Refrigerator) FindFood(food string) (Food, error) {
 // to use either "panic" or "recover" in this exercise; we won't
 // be using either one.
 func Eat(fridge Refrigerator) error {
-	defer fridge.Close()
 	fridge.Open()
+	defer fridge.Close()
 	food, err := fridge.FindFood("bananas")
 	if err != nil {
 		return err

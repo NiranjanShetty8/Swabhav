@@ -37,6 +37,20 @@ func (uService *UserService) Register(user *umodel.User) error {
 	return nil
 }
 
+func (uService *UserService) login(user *umodel.User) error {
+	currentUser := umodel.User{}
+	userDB := uService.DB.Where("username=?", user.Username).First(&currentUser)
+	if userDB.Error != nil {
+		return fmt.Errorf("User does not exist.")
+	}
+	currentPassword := uService.encryptPassword(user.Password)
+	if currentPassword != user.Password {
+		return fmt.Errorf("Invalid Password.")
+	}
+	//make it return ID
+	return nil
+}
+
 func (uService *UserService) encryptPassword(pass string) string {
 	// sha := sha1.New()
 	// sha.Write([]byte(pass))
